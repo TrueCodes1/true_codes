@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "path": "^0.12.7",
+    "concurrently": "7.1.0",
     "node": "^17.7.2"
   },
   "devDependencies": {},
