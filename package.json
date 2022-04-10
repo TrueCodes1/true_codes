@@ -7,6 +7,8 @@
     "concurrently": "7.1.0",
     "node": "^17.7.2",
     "path": "^0.12.7",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.0"
   },
   "devDependencies": {},

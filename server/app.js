@@ -9,7 +9,7 @@ import router from './routes/posts.js';
 const __dirname = path.dirname(__filename);
 //This will create a middleware.
 //When you navigate to the root page, it would use the built react-app
-app.use(express.static(path.resolve(__dirname, "../client/build")));
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 app.use('/', router);
 
