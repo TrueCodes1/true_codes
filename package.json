@@ -6,7 +6,8 @@
         "git-update": "git add . && git commit -m updated && git push origin main"
     },
     "dependencies": {
-        "path": "^0.12.7",
-        "concurrently": "^1.0.0"
+        "concurrently": "^1.0.0",
+        "node": "^17.7.2",
+        "path": "^0.12.7"
     }
 }
