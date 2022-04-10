@@ -13,8 +13,6 @@ const __dirname = path.dirname(__filename);
 //When you navigate to the root page, it would use the built react-app
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
-app.use(router)
-
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
