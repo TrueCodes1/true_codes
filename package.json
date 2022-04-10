@@ -1,13 +1,27 @@
 {
-    "scripts": {
-        "server": "cd server && node app.js",
-        "client": "cd client && npm run build",
-        "start": "concurrently \"npm run server\" \"npm run client\"",
-        "git-update": "git add . && git commit -m updated && git push origin main"
-    },
-    "dependencies": {
-        "concurrently": "^7.1.0",
-        "node": "^17.7.2",
-        "path": "^0.12.7"
-    }
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "path": "^0.12.7",
+    "node": "^17.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "server": "cd server && node app.js",
+    "client": "cd client && npm run build",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "git-update": "git add . && git commit -m updated && git push origin main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrueCodes1/true_codes.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TrueCodes1/true_codes/issues"
+  },
+  "homepage": "https://github.com/TrueCodes1/true_codes#readme"
 }
