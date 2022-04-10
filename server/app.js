@@ -1,6 +1,6 @@
 import express from 'express';
+import path from 'path';
 const app = express();
-const path = require("path");
 
 import router from './routes/posts.js';
 
