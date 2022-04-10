@@ -609,17 +609,18 @@ export default (props) => {
           </ScrollableDescriptionContent>
           
           <ScrollableDescriptionContent>
-            Innovative e-commerce platform to sell anything online within 
-            the community of mainly young people. The website runs on 
-            Node.js (Express) with ejs SSR and modern decent-looking 
-            HTML+CSS+JS front-end. We are  switching to React.js in close time!
+            Modern platform running on React.js, Node.js and MongoDB serving as a storage 
+            of your own recipies of all kinds. Register yourself, build 
+            up your collection, add friends and share it 
+            among them just as you would on a social network.
           </ScrollableDescriptionContent>
           
           <ScrollableDescriptionContent>
-            Innovative e-commerce platform to sell anything online within 
-            the community of mainly young people. The website runs on 
-            Node.js (Express) with ejs SSR and modern decent-looking 
-            HTML+CSS+JS front-end. We are  switching to React.js in close time!
+            Simple and easy - to - use platform with the focus on irregular 
+            verbs serving for lerners of German. Do not hesitate to add your 
+            needed verbs and take a test.  Node.js on the back-end 
+            complements HTML + CSS + JS on the front-end. Regarding 
+            database, Meine Verben runs on Firebase. 
           </ScrollableDescriptionContent>
 
         </ScrollableDescription>

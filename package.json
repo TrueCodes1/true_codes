@@ -1,5 +1,12 @@
 {
     "scripts": {
+        "server": "cd server && node app.js",
+        "client": "cd client && npm run build",
+        "start": "concurrently \"npm run server\" \"npm run client\"",
         "git-update": "git add . && git commit -m updated && git push origin main"
+    },
+    "dependencies": {
+        "path": "^0.12.7",
+        "concurrently": "^1.0.0"
     }
 }
