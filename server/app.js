@@ -5,7 +5,7 @@ const app = express();
 
 import router from './routes/posts.js';
 
-
+const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename);
 //This will create a middleware.
 //When you navigate to the root page, it would use the built react-app
