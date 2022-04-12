@@ -206,7 +206,7 @@ const ScrollableSmall = styled.div`
   box-sizing: border-box;
   margin-bottom: 30px;
   overflow: hidden;
-  scrollbar-width: none
+  scrollbar-width: none;
 `
 
 const ScrollableSmallContent = styled.div`
@@ -215,7 +215,7 @@ const ScrollableSmallContent = styled.div`
   max-height: 30px;
   width: 100%;
   padding: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
 `
 
 const ScrollableHeader = styled.div`
@@ -226,7 +226,7 @@ const ScrollableHeader = styled.div`
   min-width: 420px;
   display: flex;
   flex-direction: column;
-  alig-items: center;
+  align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
   margin-bottom: 30px;
@@ -245,7 +245,7 @@ const ScrollableHeaderContent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start
+  justify-content: flex-start;
 `
 
 const ScrollableLink = styled.div`
@@ -256,12 +256,12 @@ const ScrollableLink = styled.div`
   min-width: 320px;
   display: flex;
   flex-direction: column;
-  alig-items: center;
+  align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
   margin-bottom: 30px;
   overflow: hidden;
-  scrollbar-width: none
+  scrollbar-width: none;
 `
 
 const ScrollableLinkContent = styled.div`
@@ -270,7 +270,7 @@ const ScrollableLinkContent = styled.div`
   max-height: 30px;
   width: 100%;
   padding: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
 `
 
 const LinkStyled = styled.a`
@@ -296,7 +296,7 @@ const ScrollableDescription = styled.div`
   max-width: 550px;
   display: flex;
   flex-direction: column;
-  alig-items: center;
+  align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
   overflow: hidden;
@@ -309,7 +309,7 @@ const ScrollableDescriptionContent = styled.div`
   max-height: 140px;
   width: 100%;
   padding: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
 `
 export default (props) => {
 

@@ -17,7 +17,7 @@ const NavMain = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 999
+    z-index: 999;
 `
 
 const NavUl = styled.ul`
@@ -83,7 +83,7 @@ const NavA = styled.p`
 `
 
 const NavLi = styled.li`
-    cursor: pointer
+    cursor: pointer;
 `
 
 function Nav(props) {
