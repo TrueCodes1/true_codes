@@ -26,21 +26,21 @@ const MainDiv = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: none
+    display: none;
 `
 
 const Heading = styled.h1`
     color: ${secondaryColor};
     font-family: 'Signerica Thin';
-    text-aling: center;
-    display: flex
+    text-align: center;
+    display: flex;
 `
 
 const P = styled.p`
     font-family: 'SVN-Gilroy';
     color: ${secondaryColor};
     opacity: .5;
-    display: none
+    display: none;
 `
 
 const Leave = keyframes`

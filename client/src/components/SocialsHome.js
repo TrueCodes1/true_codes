@@ -21,7 +21,7 @@ const Ul = styled.ul`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between
+    justify-content: space-between;
 `
 
 const FloatIn = keyframes`
@@ -77,19 +77,16 @@ export default () => {
         const Li1 = document.getElementById('social-li-1');
         const Li2 = document.getElementById('social-li-2');
         const Li3 = document.getElementById('social-li-3');
-        const Li4 = document.getElementById('social-li-4');
 
         if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
             Li1.style.opacity = '1';
             Li2.style.opacity = '1';
             Li3.style.opacity = '1';
-            Li4.style.opacity = '1';
         } else {
 
             Li1.style.opacity = '0';
             Li2.style.opacity = '0';
             Li3.style.opacity = '0';
-            Li4.style.opacity = '0';
 
             for (let Li of Lis){
                 Li.style.opacity = '0'
@@ -107,10 +104,6 @@ export default () => {
                 Li3.classList.add('float')
             }, 25900)
 
-            setTimeout(() =>{
-                Li4.classList.add('float')
-            }, 26100)
-
             setTimeout(() => {
                 Li1.style.opacity = '1';
             }, 26250);
@@ -122,10 +115,7 @@ export default () => {
             setTimeout(() => {
                 Li3.style.opacity = '1';
             }, 26650);
-            
-            setTimeout(() => {
-                Li4.style.opacity = '1';
-            }, 26850);
+        
         }
 
     })
@@ -135,17 +125,20 @@ export default () => {
         <div>
             <Ul className='ul'>
                 <Li className='socials-li' id='social-li-1'>
-                    <img src={Linkedin_50x50} />
+                    <a href='https://sk.linkedin.com/in/norbert-sviatko-747099230' target='_blank'>
+                        <img src={Linkedin_50x50}/>
+                    </a>
                 </Li>
                 <Li className='socials-li' id='social-li-2'>
-                    <img src={Github_50x50} />
+                    <a href='https://github.com/TrueCodes1' target='_blank'>
+                        <img src={Github_50x50} />
+                    </a>
                 </Li>
                 <Li className='socials-li' id='social-li-3'>
-                    <img src={Instagram_50x50} />
+                    <a href='https://www.instagram.com/norbert_sviatko/' target='_blank'>
+                        <img src={Instagram_50x50} />
+                    </a>
                 </Li>
-                <LiGmail className='socials-li' id='social-li-4'>
-                    <img src={Gmail_50x50} />
-                </LiGmail>
             </Ul>
         </div>
       </>

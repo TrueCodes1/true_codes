@@ -45,7 +45,7 @@ const PersonalPhotoImg = styled.img`
     right: 0;
     min-height: 100%;
     max-height: 100%;
-    opacity: .75
+    opacity: .75;
 `
 
 export default () => {
