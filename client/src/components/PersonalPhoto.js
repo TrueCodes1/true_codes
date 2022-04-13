@@ -23,19 +23,27 @@ const Float = keyframes`
 `
 
 const PersonalPhotoDiv = styled.div`
-    position: fixed;
-    min-width: 50vw;
-    max-width: 50vw;
-    min-height: 100vh;
-    max-height: 100vh;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
-    display: flex;
-    opacity: 0;
+    @media only screen and (max-width: 576px) {
+        
+    }
+    @media only screen and (min-width: 768px) {
 
-    &.float{
-        animation: .75s 1 ${Float}
+    }
+    @media only screen and (min-width: 992px) {
+        position: fixed;
+        min-width: 50vw;
+        max-width: 50vw;
+        min-height: 100vh;
+        max-height: 100vh;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+        display: flex;
+        opacity: 0;
+
+        &.float{
+            animation: .75s 1 ${Float}
+        }
     }
 `
 
