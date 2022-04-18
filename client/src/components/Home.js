@@ -12,21 +12,28 @@ const primaryColor = '#131b23';
 const secondaryColor = '#e9f1f7';
 
 const MainDiv = styled.div`
-    position: absolute;
-    min-width: 60vw;
-    max-width: 60vw;
-    min-height: 30vh;
-    max-height: 30vh;
-    top: 35vh;
-    left: 20vw;/*
-    border: 2px solid ${secondaryColor};
-    border-radius: 2.5vh;
-    box-shadow:  0 0 10px #e9f1f7bb;*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    display: none;
+    @media only screen and (max-width: 576px) {
+    }
+    @media only screen and (min-width: 768px) {
+
+    }
+    @media only screen and (min-width: 992px) {
+        position: absolute;
+        min-width: 60vw;
+        max-width: 60vw;
+        min-height: 30vh;
+        max-height: 30vh;
+        top: 35vh;
+        left: 20vw;/*
+        border: 2px solid ${secondaryColor};
+        border-radius: 2.5vh;
+        box-shadow:  0 0 10px #e9f1f7bb;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+    }
 `
 
 const Heading = styled.h1`
@@ -55,6 +62,27 @@ const Leave = keyframes`
 `
 
 const SideMainDiv = styled.div`
+@media only screen and (max-width: 576px) {
+    position: absolute;
+    min-width: 95vw;
+    max-width: 95vw;
+    left: 10px;
+    font-family: SVN-Gilroy;
+    min-height: 300px;
+    max-height: 300px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; 
+    transform: translateY(-30px)   
+}
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (min-width: 992px) {
     position: absolute;
     min-width: 500px;
     max-width: 1000px;
@@ -71,6 +99,7 @@ const SideMainDiv = styled.div`
     &.leave{
         animation: .35s 1 ${Leave}
     }
+}
 `
 
 const Float = keyframes`
@@ -140,6 +169,17 @@ const FloatSubSubOut = keyframes`
 `
 
 const NameDiv = styled.div`
+@media only screen and (max-width: 576px) {
+    font-size: 12vw;
+    color: ${secondaryColor};
+    min-width: 100%;
+    max-width: 100%;
+    text-align: left;
+}
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (min-width: 992px) {
     min-width: 100%;
     max-width: 100%;
     display: flex;
@@ -168,9 +208,22 @@ const NameDiv = styled.div`
         color: ${primaryColor};
         transition: all .25s ease
     }
+}
 `
 
 const SubDiv = styled.div`
+@media only screen and (max-width: 576px) {
+    font-size: 3vh;
+    color: ${secondaryColor};
+    min-width: 100%;
+    max-width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (min-width: 992px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -198,9 +251,24 @@ const SubDiv = styled.div`
         color: ${primaryColor};
         transition: all .25s ease
     }
+}
 `
 
 const SubSubDiv = styled.div`
+@media only screen and (max-width: 576px) {
+    font-size: 1.75vh;
+    color: ${secondaryColor};
+    min-width: 100%;
+    max-width: 100%;
+    text-align: left;
+    margin-top: 10px;
+    min-width: 70vw;
+    max-width: 70vw
+}
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (min-width: 992px) {
     min-width: 400px;
     max-width: 400px;
     display: flex;
@@ -230,6 +298,7 @@ const SubSubDiv = styled.div`
         color: ${primaryColor};
         transition: all .25s ease
     }
+}
 `
 
 export default (props) => {

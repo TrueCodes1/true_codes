@@ -6,7 +6,7 @@ import './styles/animations.css';
 import './styles/all.css';
 import SocialsHome from "./SocialsHome";
 
-import PersonalPhoto from './images/personal_photo_3.png'
+import PersonalPhoto from './images/personal_photo_3.png';
 
 const primaryColor = '#131b23';
 const secondaryColor = '#e9f1f7';
@@ -24,7 +24,14 @@ const Float = keyframes`
 
 const PersonalPhotoDiv = styled.div`
     @media only screen and (max-width: 576px) {
-        
+        position: fixed;
+        min-width: 100vw;
+        max-width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        left: 0;
     }
     @media only screen and (min-width: 768px) {
 
@@ -48,12 +55,25 @@ const PersonalPhotoDiv = styled.div`
 `
 
 const PersonalPhotoImg = styled.img`
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    min-height: 100%;
-    max-height: 100%;
-    opacity: .75;
+    @media only screen and (max-width: 576px) {
+        position: fixed;
+        min-height: 60vh;
+        max-height: 60vh;
+        right: 0;
+        bottom: 0;
+        opacity: .5;
+    }
+    @media only screen and (min-width: 768px) {
+
+    }
+    @media only screen and (min-width: 992px) {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        min-height: 100%;
+        max-height: 100%;
+        opacity: .75;
+    }
 `
 
 export default () => {
