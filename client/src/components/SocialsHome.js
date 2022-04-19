@@ -9,19 +9,41 @@ import Instagram_50x50 from './images/instagram_50x50.svg';
 import Gmail_50x50 from './images/gmail_50x50.svg';
 
 const Ul = styled.ul`
-    padding: 0;
-    list-style: none;
-    position: absolute;
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 100px;
-    max-height: 100px;
-    bottom: 2vh;
-    left: calc((100vw - 300px) / 2);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    @media only screen and (max-width: 576px) {
+        position: fixed;
+        width: fit-content;
+        min-width: 110vw;
+        left: -5vw;
+        right: 0;
+        margin: 0 auto;
+        bottom: 5vw;
+        display: flex;
+        flex-direction: row;
+        alig-items: center;
+        justify-content: space-evenly;
+        padding: 25px 10px;
+        border-radius: 10px;
+        background: linear-gradient(90deg, rgb(233, 241, 247, 0.1) 0%, rgba(19, 27, 35, 0.1) 60%);
+        backdrop-filter: blur(15px);
+    }
+    @media only screen and (min-width: 768px) {
+
+    }
+    @media only screen and (min-width: 992px) {
+        padding: 0;
+        list-style: none;
+        position: absolute;
+        min-width: 300px;
+        max-width: 300px;
+        min-height: 100px;
+        max-height: 100px;
+        bottom: 2vh;
+        left: calc((100vw - 300px) / 2);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 `
 
 const FloatIn = keyframes`
@@ -47,13 +69,29 @@ const GmailFloatIn = keyframes`
 `
 
 const Li = styled.li`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @media only screen and (max-width: 576px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 20px;
 
-    &.float{
-        animation: .75s 1 ${FloatIn};
-        opacity: 1
+        &.float{
+            animation: .75s 1 ${GmailFloatIn};
+            opacity: 1
+        }
+    }
+    @media only screen and (min-width: 768px) {
+
+    }
+    @media only screen and (min-width: 992px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.float{
+            animation: .75s 1 ${FloatIn};
+            opacity: 1
+        }
     }
 `
 
