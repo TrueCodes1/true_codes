@@ -1,42 +1,193 @@
 import React, { useEffect } from "react";
 import styled, { keyframes } from 'styled-components';
+import $ from 'jquery';
 
 import './styles/fonts.css';
+
+import BurgerLink from './images/NavbarBurger.svg'; 
+import LeaveCrossLink from './images/burgerClose.svg';
 
 const primaryColor = '#131b23';
 const secondaryColor = '#e9f1f7';
 
+const EntranceMobileNav = keyframes`
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+`
+
+const LeavingMobileNav = keyframes`
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+`
+
 const NavMain = styled.div`
-    color: ${secondaryColor};
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-width: 100vw;
-    max-width: 100vw;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
+    @media only screen and (max-width: 576px) {
+        position: fixed;
+        min-width: 100vw;
+        max-width: 100vw;
+        min-height: 100vh;
+        max-height: 100vh;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        display: flex;
+        visibility: hidden;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        background: ${primaryColor};
+        z-index: 99999;
+        &.enter {
+            animation: 1 .35s ${EntranceMobileNav};
+            -webkit-animation: 1 .35s ${EntranceMobileNav}
+        }
+        &.leave {
+            animation: 1 .35s ${LeavingMobileNav};
+            -webkit-animation: 1 .35s ${LeavingMobileNav};
+        }
+    }
+    @media only screen and (min-width: 768px) {
+
+    }
+    @media only screen and (min-width: 992px) {
+        color: ${secondaryColor};
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+    }
+`
+
+const LeaveCrossComing = keyframes`
+    0% {
+        margin-left: 20px;
+        margin-bottom: -50vh;
+        transform: rotateZ(-2000deg)
+    }
+    40% {
+        margin-left: 70px;
+        margin-bottom: 50vh;
+    }
+    70%, 85% {
+        transform: rotateZ(0);
+        margin-bottom: 0;
+        margin-left: 70px;
+    }
+    100% {
+        margin: 0;
+        transform: rotateZ(-90deg)
+    }
+`
+
+const LeaveCrossLeaving = keyframes`
+    0% {
+        left: calc(50vw - 30px);
+        bottom: 20px;
+    }
+    10% {
+        left: calc(50vw - 30px);
+        top: calc(100vh - 80px);
+    }
+    30% {
+        left: 10px;
+        top: calc(100vh - 70px);
+        transform: rotateZ(0)
+    }
+    80%, 100% {
+        left: 10px;
+        top: -60px;
+        transform: rotateZ(-540deg)
+    }
+`
+
+const NavLeaveCrossMobile = styled.div`
+    @media only screen and (max-width: 576px) {
+        min-width: 60px;
+        max-width: 60px;
+        min-height: 60px;
+        max-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 20px;
+        left: calc(50vw - 30px);
+        margin: 0 auto;
+        &.enter {
+            animation: 1 2.5s ${LeaveCrossComing};
+            -webkit-animation: 1 2.5s ${LeaveCrossComing};
+        }
+        &.leave{
+            animation: 1 2.5s ${LeaveCrossLeaving};
+            -webkit-animation: 1 2.5s ${LeaveCrossLeaving};
+        }
+        &.after-leave {
+            left: 10px;
+            top: -120px;
+            transform: rotateZ(-540deg)
+        }
+    }
+    @media only screen and (min-width: 768px) {
+
+    }
+    @media only screen and (min-width: 992px) {
+        display: none;
+    }
+`
+
+const NavLeaveCrossMobileImg = styled.img`
+    min-width: 100%;
+    max-width: 100%;
 `
 
 const NavUl = styled.ul`
-    padding: 20px 0;
-    min-width: 30vw;
-    max-width: 30vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-    font-family: SVN-Gilroy;
-
-    &.dark {
-        color: red
+    @media only screen and (max-width: 576px) {
+        display: flex;
+        font-family: SVN-Gilroy;
+        color: ${secondaryColor};
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        font-size: 4vh;
     }
+    @media only screen and (min-width: 768px) {
 
-    &.light {
-        color: green
+    }
+    @media only screen and (min-width: 992px) {
+        padding: 20px 0;
+        min-width: 30vw;
+        max-width: 30vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        font-family: SVN-Gilroy;
+
+        &.dark {
+            color: red
+        }
+
+        &.light {
+            color: green
+        }
     }
 `
 
@@ -61,29 +212,104 @@ const Bubble = keyframes`
 `
 
 const NavA = styled.p`
-    text-decoration: none;
-    color: ${secondaryColor};
-    opacity: 0;
-
-    &.float{
-        animation: .75s 1 ${FloatIn};
-    }
-
-    &.bubble {
-        animation: infinite 3s ${Bubble}
-    }
-
-    &.dark{
+    @media only screen and (max-width: 576px) {
+        text-decoration: none;
         color: ${secondaryColor};
+        opacity: 0;
+        margin: 2vh 0;
+        &.float{
+            animation: .75s 1 ${FloatIn};
+        }
+
+        &.bubble {
+            animation: infinite 3s ${Bubble}
+        }
+
+        &.dark{
+            color: ${secondaryColor};
+        }
+        
+        &.light{
+            color: ${primaryColor};
+        }
     }
-    
-    &.light{
-        color: ${primaryColor};
+    @media only screen and (min-width: 768px) {
+
+    }
+    @media only screen and (min-width: 992px) {
+        text-decoration: none;
+        color: ${secondaryColor};
+        opacity: 0;
+
+        &.float{
+            animation: .75s 1 ${FloatIn};
+        }
+
+        &.bubble {
+            animation: infinite 3s ${Bubble}
+        }
+
+        &.dark{
+            color: ${secondaryColor};
+        }
+        
+        &.light{
+            color: ${primaryColor};
+        }
     }
 `
 
 const NavLi = styled.li`
     cursor: pointer;
+`
+
+const BurgerLeave = keyframes`
+    0% {
+        transform: translateX(0) translateY(0) scaleY(1)
+    }
+    50% {
+        transform: scaleY(.25) translateY(-60px)
+    }
+    70%, 100% {
+        transform: scaleY(1) translateY(100vh) translateX(5vw)
+    }
+`
+
+const NavBurgerMobile = styled.div`
+    @media only screen and (max-width: 576px) {
+        position: absolute;
+        min-width: 60px;
+        max-width: 60px;
+        min-height: 60px;
+        max-height: 60px;
+        left: 20px;
+        top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.fall {
+            animation: 1 1.5s ${BurgerLeave};
+            -webkit-animation: 1 1.25s ${BurgerLeave};
+        }
+        &.above {
+            top: -120px;
+        }
+        &.come-back {
+            top: 10px;
+            transition: all .5s ease
+        }
+    }
+    @media only screen and (min-width: 768px) {
+
+    }
+    @media only screen and (min-width: 992px) {
+        display: none;
+    }
+`
+
+const BurgerImg = styled.img`
+    min-width: 100%;
+    max-width: 100%;
 `
 
 function Nav(props) {
@@ -462,10 +688,57 @@ function Nav(props) {
             
         }
 
+        const showMobileMenu = () => {
+            $('#burger-mobile').addClass('fall');
+            $('#burger-mobile').on('animationend', () => {
+                $('#burger-mobile').css('display', 'none');
+                $('#burger-mobile').removeClass('fall');
+                $('#burger-mobile').addClass('above');
+                $('#nav-main').css('visibility', 'visible');
+                $('#nav-main').addClass('enter');
+                $('#cross-mobile').addClass('enter');
+                setTimeout(() => {
+                    $('#nav-main').removeClass('enter');
+                    $('#cross-mobile').removeClass('enter');
+                    $('#nav-main').css('visibility', 'visible');
+                    $('#cross-mobile').on('click', () => {
+                        $('#burger-mobile').css('display', 'flex');
+                        $('#cross-mobile').addClass('leave');
+                        $('#cross-mobile').on('animationend', () => {
+                            $('#cross-mobile').addClass('after-leave');
+                            $('#nav-main').addClass('leave');
+                            setTimeout(() => {
+                                $('#nav-main').css('opacity', '0');
+                                $('#nav-main').css('visibility', 'hidden');
+                                $('#nav-main').removeClass('leave');
+                                $('#burger-mobile').addClass('come-back');
+                                $('#burger-mobile').removeClass('above');
+                                $('#cross-mobile').removeClass('leave');
+                                $('#cross-mobile').removeClass('after-leave');
+                                setTimeout(() => {
+                                    $('#nav-main').css('opacity', '1');
+                                    $('#burger-mobile').removeClass('come-back')
+                                }, 500)
+                            }, 350)
+                        })
+                    })
+                }, 2500)
+            })
+        }
+
+        $('#burger-mobile').on('click', showMobileMenu);
+
     })
 
-    return(
-        <NavMain className="nav-main">
+    return( 
+    <>
+        <NavBurgerMobile id="burger-mobile">
+            <BurgerImg src={BurgerLink} />
+        </NavBurgerMobile>
+        <NavMain className="nav-main" id="nav-main">
+            <NavLeaveCrossMobile id="cross-mobile">
+                <NavLeaveCrossMobileImg src={LeaveCrossLink} />
+            </NavLeaveCrossMobile>
             <NavUl className='nav-ul'>
                 <NavA className={'nav-a ' + props.theme} id="nav-a-1">    
                     <NavLi className="nav-li">
@@ -484,6 +757,7 @@ function Nav(props) {
                 </NavA>
             </NavUl>
         </NavMain>
+        </>
     )
 }
 

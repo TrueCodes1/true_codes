@@ -66,7 +66,7 @@ const SideMainDiv = styled.div`
     position: absolute;
     min-width: 95vw;
     max-width: 95vw;
-    left: 10px;
+    left: 15px;
     font-family: SVN-Gilroy;
     min-height: 300px;
     max-height: 300px;
@@ -261,7 +261,7 @@ const SubSubDiv = styled.div`
     min-width: 100%;
     max-width: 100%;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 20px;
     min-width: 70vw;
     max-width: 70vw
 }
