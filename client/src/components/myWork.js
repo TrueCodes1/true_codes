@@ -36,9 +36,8 @@ const MainDiv = styled.div`
       left: 5vw;
       top: 15vh;
       display: flex;
-      /* change opacity to 0 and visibility to hidden for proper functionality */ 
-      opacity: 1;
-      visibility: visible;
+      opacity: 0;
+      visibility: hidden;
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
@@ -173,8 +172,7 @@ const Choice = styled.div`
   padding: 1em 0;
   font-size: 1.5rem;
   cursor: pointer;
-  /* change opacity to 0 for proper behavior */
-  opacity: 1;
+  opacity: 0;
   transition: all .25s ease;
 
   &:hover{
@@ -190,7 +188,7 @@ const Choice = styled.div`
   &.leave{
     animation: 1.2s 1 ${Disappear}
   }
-  
+
   &.dark{
     color: ${secondaryColor};
     transition: all .25s ease
@@ -199,6 +197,15 @@ const Choice = styled.div`
   &.light{
     color: ${primaryColor};
     transition: all .25s ease
+  }
+  @media only screen and (max-width: 576px) {
+      opacity: 1;
+  }
+  @media only screen and (min-width: 768px) {
+
+  }
+  @media only screen and (min-width: 992px) {
+
   }
 `
 
