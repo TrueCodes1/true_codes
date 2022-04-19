@@ -73,7 +73,7 @@ const SideMainDiv = styled.div`
     top: 0;
     bottom: 0;
     margin: auto 0;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center; 

@@ -1,28 +1,49 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
+import $ from 'jquery';
 
 import './styles/all.css';
 import './styles/animations.css';
 import './styles/fonts.css';
+import projects from './jsons/projects';
 
 const primaryColor = '#131b23';
 const secondaryColor = '#e9f1f7';
 
 const MainDiv = styled.div`
-  position: absolute;
-  min-width: 80vw;
-  max-width: 80vw;
-  min-height: 70vh;
-  max-height: 70vh;
-  left: 5vw;
-  top: 15vh;
-  display: flex;
-  opacity: 0;
-  visibility: hidden;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
+  @media only screen and (max-width: 576px) {
+      position: absolute;
+      min-width: 90vw; 
+      max-width: 90vw;
+      min-height: 70vh;
+      max-height: 70vh;
+      top: 10vh;
+      left: 5vw;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start
+  }
+  @media only screen and (min-width: 768px) {
+
+  }
+  @media only screen and (min-width: 992px) {
+      position: absolute;
+      min-width: 80vw;
+      max-width: 80vw;
+      min-height: 70vh;
+      max-height: 70vh;
+      left: 5vw;
+      top: 15vh;
+      display: flex;
+      /* change opacity to 0 and visibility to hidden for proper functionality */ 
+      opacity: 1;
+      visibility: visible;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+  }
 `
 
 const ComeIn = keyframes`
@@ -74,37 +95,50 @@ const SquezeAndLeave = keyframes`
 `
 
 const WorkChoice = styled.div`
-  min-height: 70vh;
-  max-height: 70vh;
-  min-width: 300px;
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  jusitfy-content: flex-start;
-  border: none;
-  border-left: 2px solid ${secondaryColor};
-  border-right: 2px solid ${secondaryColor};
-
-  &.come{
-    animation: 1 1s ${ComeIn};
+  @media only screen and (max-width: 576px) {
+      overflow: hidden;
+      overflow-y: auto;
+      min-width: 90vw;
+      max-width: 90vw;
+      min-height: 70vh;
+      max-height: 70vh;
   }
+  @media only screen and (min-width: 768px) {
 
-  &.leave{
-    animation: 1.25s 1 ${SquezeAndLeave}
   }
-  
-  &.dark{
+  @media only screen and (min-width: 992px) {
+    min-height: 70vh;
+    max-height: 70vh;
+    min-width: 300px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    jusitfy-content: flex-start;
+    border: none;
     border-left: 2px solid ${secondaryColor};
     border-right: 2px solid ${secondaryColor};
-    transition: all .25s ease
-  } 
 
-  &.light{
-    border-left: 2px solid ${primaryColor};
-    border-right: 2px solid ${primaryColor};
-    transition: all .25s ease
-  }
+    &.come{
+      animation: 1 1s ${ComeIn};
+    }
+
+    &.leave{
+      animation: 1.25s 1 ${SquezeAndLeave}
+    }
+    
+    &.dark{
+      border-left: 2px solid ${secondaryColor};
+      border-right: 2px solid ${secondaryColor};
+      transition: all .25s ease
+    } 
+
+    &.light{
+      border-left: 2px solid ${primaryColor};
+      border-right: 2px solid ${primaryColor};
+      transition: all .25s ease
+    }
+}
 
 `
 
@@ -139,7 +173,8 @@ const Choice = styled.div`
   padding: 1em 0;
   font-size: 1.5rem;
   cursor: pointer;
-  opacity: 0;
+  /* change opacity to 0 for proper behavior */
+  opacity: 1;
   transition: all .25s ease;
 
   &:hover{
@@ -168,29 +203,194 @@ const Choice = styled.div`
 `
 
 const MainPreviewDiv = styled.div`
-  min-width: 60%;
-  max-width: 60%;
-  min-height: 70vh;
-  max-height: 70vh;
-  margin-left: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 20px;
-  font-family: SVN-Gilroy;
-  color: ${secondaryColor};
-
-  
-  &.dark{
-    color: ${secondaryColor};
-    transition: all .25s ease
-  } 
-
-  &.light{
-    color: ${primaryColor};
-    transition: all .25s ease
+  @media only screen and (max-width: 576px) {
+      display: none;
   }
+  @media only screen and (min-width: 768px) {
+
+  }
+  @media only screen and (min-width: 992px) {
+    min-width: 60%;
+    max-width: 60%;
+    min-height: 70vh;
+    max-height: 70vh;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    font-family: SVN-Gilroy;
+    color: ${secondaryColor};
+
+    
+    &.dark{
+      color: ${secondaryColor};
+      transition: all .25s ease
+    } 
+
+    &.light{
+      color: ${primaryColor};
+      transition: all .25s ease
+    }
+  }
+`
+
+const MainPreviewDivMobileComeIn = keyframes`
+  0% {
+    transform: translateY(70vh);
+    opacity: 0; 
+    visibility: hidden;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+`
+
+const MainPreviewDivMobileLeave = keyframes`
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  20% {
+    transform: translateY(-10px);
+    opacity: 1; 
+  }
+  100% {
+    transform: translateY(70vh);
+    opacity: 0;
+    visibility: hidden;
+  }
+`
+
+const MainPreviewDivMobile = styled.div`
+  @media only screen and (max-width: 576px) {
+      position: fixed;
+      min-width: 100vw;
+      max-width: 100vw;
+      min-height: 70vh;
+      max-height: 70vh;
+      padding-bottom: 20px;
+      bottom: 0;
+      left: 0;
+      background: ${primaryColor};
+      border-radius: 10vw 10vw 0 0;
+      box-shadow: 20px 20px 40px rgba(11, 16, 20, 0.351),
+                  -20px -20px 40px rgba(11, 16, 20, 0.351),
+                  inset -10px 10px 20px rgba(37, 53, 68, 0.121),
+                  inset 10px 10px 20px rgba(37, 53, 68, 0.121);
+      font-family: SVN-Gilroy;
+      color: ${secondaryColor};
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justif-content: flex-start;
+      padding: 30px;
+      padding-top: calc(30px - 1vh);
+      overflow: hidden;
+      overflow-y: auto;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(70vh);
+      padding-bottom: 60px;
+      &.enter {
+        animation: 1 .5s ${MainPreviewDivMobileComeIn};
+        -webkit-animation: 1 .5s ${MainPreviewDivMobileComeIn};
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      &.leave {
+        animation: 1 .5s ${MainPreviewDivMobileLeave};
+        -webkit-animation: 1 .5s ${MainPreviewDivMobileLeave};
+        transform: translateY(70vh);
+        opacity: 0; 
+        visibility: hidden;
+      }
+  }
+  @media only screen and (min-width: 768px) {
+
+  }
+  @media only screen and (min-width: 992px) {
+    display: none;
+  }
+`
+
+const ProjectTypeMobile = styled.div`
+  font-size: 2.25vh;
+  opacity: .5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  margin: 1vh 0;
+`
+
+const ProjectFullstackMobile = styled.div`
+  font-size: 2.25vh;
+  opacity: .5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  margin: 1vh 0;
+`
+
+const ProjectNameMobile = styled.div`
+  line-height: 1.15em;
+  font-size: 7vh;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  margin: 1.5vh 0;
+` 
+
+const ProjectLinkMobile = styled.a`
+  color: ${secondaryColor};
+  font-size: 2.25vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  margin: 1vh 0;
+  text-decoration: underline;
+`
+
+const ProjectTextMobile = styled.div`
+  font-size: 2.5vh;
+  opacity: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  margin: 1.5vh 0;
+`
+
+const ProjectCloseButton = styled.div`
+  position: fixed;
+  font-family: SVN-Gilroy;
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 2vh;
+  background: ${secondaryColor};
+  color: ${primaryColor};
+  font-weight: 600;
+  border-radius: 10px;
 `
 
 const ScrollableSmall = styled.div`
@@ -476,7 +676,39 @@ export default (props) => {
     choiceRecepty.addEventListener('mouseenter', scrollToRecepty);
     choiceVerben.addEventListener('mouseenter', scrollToVerben);
 
-    document.getElementById('main-div-work').addEventListener('mouseleave', scrollNeutral)
+    document.getElementById('main-div-work').addEventListener('mouseleave', scrollNeutral);
+
+    $('#close-project-mobile').on('click', () => {
+      $('#main-preview-mobile').removeClass('enter');
+      $('#main-preview-mobile').addClass('leave');
+      $('#close-project-mobile').css('display', 'none');
+    })
+
+    for (let choice of [choiceSigred, choiceTFStyle, choiceRecepty, choiceVerben]) {
+      $(choice).on('click', () => {
+        let chosen = $(choice).attr('id').split('-')[1];
+        let project = projects.projects[chosen.toString()];
+        $('#project-type-mobile').html(project.type);
+        $('#project-stack-mobile').html(project.stack);
+        $('#project-name-mobile').html(project.name);
+        if (project.link.toString().replaceAll(' ', '').length > 0) {
+          $('#project-link-mobile').html(project.name);
+          $('#project-link-mobile').css('text-decoration', 'underline');
+          $('#project-link-mobile').css('opacity', '1');
+        } else {
+          $('#project-link-mobile').html('link to web coming soon');
+          $('#project-link-mobile').css('text-decoration', 'none');
+          $('#project-link-mobile').css('opacity', '.5');
+        }
+        $('#project-link-mobile').attr('href', project.link);
+        $('#project-text-mobile').html(project.text);
+        $('#main-preview-mobile').removeClass('leave');
+        $('#main-preview-mobile').addClass('enter');
+        setTimeout(() => {
+          $('#close-project-mobile').css('display', 'flex');
+        }, 400)
+      })
+    }
 
   })
 
@@ -626,6 +858,29 @@ export default (props) => {
         </ScrollableDescription>
 
       </MainPreviewDiv>
+
+      <MainPreviewDivMobile id='main-preview-mobile'>
+
+        <ProjectTypeMobile id='project-type-mobile'>
+        </ProjectTypeMobile>
+
+        <ProjectFullstackMobile id='project-stack-mobile'>
+        </ProjectFullstackMobile>
+
+        <ProjectNameMobile id='project-name-mobile'>
+        </ProjectNameMobile>
+
+        <ProjectLinkMobile href='' target='_blank' id='project-link-mobile'>
+        </ProjectLinkMobile>
+
+        <ProjectTextMobile id='project-text-mobile'>
+        </ProjectTextMobile>
+
+      </MainPreviewDivMobile>
+      
+      <ProjectCloseButton id='close-project-mobile'>
+          close
+      </ProjectCloseButton>
 
     </MainDiv>
   );

@@ -41,7 +41,7 @@ const NavMain = styled.div`
         left: 0;
         box-sizing: border-box;
         display: flex;
-        visibility: hidden;
+        visibility: visible;
         flex-direction: column;
         align-items: stretch;
         justify-content: center;
@@ -688,6 +688,30 @@ function Nav(props) {
             
         }
 
+        $('#nav-main').css('visibility', 'hidden');
+
+        const hideMobileMenu = () => {
+            $('#burger-mobile').css('display', 'flex');
+            $('#cross-mobile').addClass('leave');
+            setTimeout(() => {
+                $('#cross-mobile').addClass('after-leave');
+                $('#nav-main').addClass('leave');
+                setTimeout(() => {
+                    $('#nav-main').removeClass('leave');
+                    $('#nav-main').css('opacity', '0');
+                    $('#nav-main').css('visibility', 'hidden');
+                    $('#burger-mobile').addClass('come-back');
+                    $('#burger-mobile').removeClass('above');
+                    $('#cross-mobile').removeClass('leave');
+                    $('#cross-mobile').removeClass('after-leave');
+                    setTimeout(() => {
+                        $('#nav-main').css('opacity', '1');
+                        $('#burger-mobile').removeClass('come-back')
+                    }, 500)
+                }, 350)
+            }, 2500)
+        }
+
         const showMobileMenu = () => {
             $('#burger-mobile').addClass('fall');
             $('#burger-mobile').on('animationend', () => {
@@ -695,34 +719,15 @@ function Nav(props) {
                 $('#burger-mobile').removeClass('fall');
                 $('#burger-mobile').addClass('above');
                 $('#nav-main').css('visibility', 'visible');
+                $('#nav-main').removeClass('leave');
                 $('#nav-main').addClass('enter');
                 $('#cross-mobile').addClass('enter');
                 setTimeout(() => {
                     $('#nav-main').removeClass('enter');
                     $('#cross-mobile').removeClass('enter');
                     $('#nav-main').css('visibility', 'visible');
-                    $('#cross-mobile').on('click', () => {
-                        $('#burger-mobile').css('display', 'flex');
-                        $('#cross-mobile').addClass('leave');
-                        $('#cross-mobile').on('animationend', () => {
-                            $('#cross-mobile').addClass('after-leave');
-                            $('#nav-main').addClass('leave');
-                            setTimeout(() => {
-                                $('#nav-main').css('opacity', '0');
-                                $('#nav-main').css('visibility', 'hidden');
-                                $('#nav-main').removeClass('leave');
-                                $('#burger-mobile').addClass('come-back');
-                                $('#burger-mobile').removeClass('above');
-                                $('#cross-mobile').removeClass('leave');
-                                $('#cross-mobile').removeClass('after-leave');
-                                setTimeout(() => {
-                                    $('#nav-main').css('opacity', '1');
-                                    $('#burger-mobile').removeClass('come-back')
-                                }, 500)
-                            }, 350)
-                        })
-                    })
-                }, 2500)
+                    $('#cross-mobile').on('click', hideMobileMenu);
+                }, 2600)
             })
         }
 
