@@ -155,44 +155,50 @@ export default () => {
         const Li2 = document.getElementById('social-li-2');
         const Li3 = document.getElementById('social-li-3');
 
-        if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
+        if ($(window).width() > 991) {
+            if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
+                Li1.style.opacity = '1';
+                Li2.style.opacity = '1';
+                Li3.style.opacity = '1';
+            } else {
+    
+                Li1.style.opacity = '0';
+                Li2.style.opacity = '0';
+                Li3.style.opacity = '0';
+    
+                for (let Li of Lis){
+                    Li.style.opacity = '0'
+                }
+    
+                setTimeout(() =>{
+                    Li1.classList.add('float')
+                }, 25500)
+    
+                setTimeout(() =>{
+                    Li2.classList.add('float')
+                }, 25700)
+    
+                setTimeout(() =>{
+                    Li3.classList.add('float')
+                }, 25900)
+    
+                setTimeout(() => {
+                    Li1.style.opacity = '1';
+                }, 26250);
+                
+                setTimeout(() => {
+                    Li2.style.opacity = '1';
+                }, 26450);
+                
+                setTimeout(() => {
+                    Li3.style.opacity = '1';
+                }, 26650);
+            
+            }
+        } else {
             Li1.style.opacity = '1';
             Li2.style.opacity = '1';
             Li3.style.opacity = '1';
-        } else {
-
-            Li1.style.opacity = '0';
-            Li2.style.opacity = '0';
-            Li3.style.opacity = '0';
-
-            for (let Li of Lis){
-                Li.style.opacity = '0'
-            }
-
-            setTimeout(() =>{
-                Li1.classList.add('float')
-            }, 25500)
-
-            setTimeout(() =>{
-                Li2.classList.add('float')
-            }, 25700)
-
-            setTimeout(() =>{
-                Li3.classList.add('float')
-            }, 25900)
-
-            setTimeout(() => {
-                Li1.style.opacity = '1';
-            }, 26250);
-            
-            setTimeout(() => {
-                Li2.style.opacity = '1';
-            }, 26450);
-            
-            setTimeout(() => {
-                Li3.style.opacity = '1';
-            }, 26650);
-        
         }
 
     })

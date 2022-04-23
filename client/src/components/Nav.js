@@ -807,7 +807,64 @@ function Nav(props) {
             link.addEventListener('click', RoutesSwitch)
         }
 
-        if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
+        if ($(window).width() > 991) {
+            if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
+                navA1.style.opacity = '1';
+                navA2.style.opacity = '1';
+                navA3.style.opacity = '1';
+                
+                setTimeout(() => {
+                    navA1.classList.add('bubble')
+                }, 100);
+                
+                setTimeout(() => {
+                    navA2.classList.add('bubble')
+                }, 300);
+                
+                setTimeout(() => {
+                    navA3.classList.add('bubble')
+                }, 500);
+                
+            } else {
+    
+                setTimeout(() => {
+                    navA1.classList.add('float');
+                }, 26000);
+                
+                setTimeout(() => {
+                    navA2.classList.add('float');
+                }, 26200);
+                
+                setTimeout(() => {
+                    navA3.classList.add('float');
+                }, 26400);
+                
+                setTimeout(() => {
+                    navA1.style.opacity = '1';
+                }, 26750);
+                
+                setTimeout(() => {
+                    navA2.style.opacity = '1';
+                }, 26950);
+                
+                setTimeout(() => {
+                    navA3.style.opacity = '1';
+                }, 27150);
+    
+                setTimeout(() => {
+                    navA1.classList.add('bubble')
+                }, 29000);
+                
+                setTimeout(() => {
+                    navA2.classList.add('bubble')
+                }, 29200);
+                
+                setTimeout(() => {
+                    navA3.classList.add('bubble')
+                }, 29400);
+                
+            }
+        } else {
             navA1.style.opacity = '1';
             navA2.style.opacity = '1';
             navA3.style.opacity = '1';
@@ -823,44 +880,6 @@ function Nav(props) {
             setTimeout(() => {
                 navA3.classList.add('bubble')
             }, 500);
-            
-        } else {
-
-            setTimeout(() => {
-                navA1.classList.add('float');
-            }, 26000);
-            
-            setTimeout(() => {
-                navA2.classList.add('float');
-            }, 26200);
-            
-            setTimeout(() => {
-                navA3.classList.add('float');
-            }, 26400);
-            
-            setTimeout(() => {
-                navA1.style.opacity = '1';
-            }, 26750);
-            
-            setTimeout(() => {
-                navA2.style.opacity = '1';
-            }, 26950);
-            
-            setTimeout(() => {
-                navA3.style.opacity = '1';
-            }, 27150);
-
-            setTimeout(() => {
-                navA1.classList.add('bubble')
-            }, 29000);
-            
-            setTimeout(() => {
-                navA2.classList.add('bubble')
-            }, 29200);
-            
-            setTimeout(() => {
-                navA3.classList.add('bubble')
-            }, 29400);
             
         }
 

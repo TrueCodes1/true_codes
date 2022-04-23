@@ -409,7 +409,7 @@ const BottomQuestionWhole = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    opacity: .75
+    opacity: .75;
 `
 
 const FrontOrBack = styled.div`
@@ -427,11 +427,11 @@ const FrontOrBack = styled.div`
 
 const FrontBack =  styled.p`
     padding: 0 10px;
-    color: ${primaryColor}
+    color: ${primaryColor};
 `
 
 const Or = styled.p`
-    opacity: .5
+    opacity: .5;
 `
 
 const PushingDiv = styled.div`
@@ -446,7 +446,7 @@ const InnerDiv = styled.div`
     display: flex;
     flex-direction: row; 
     alig-item: center;
-    justify-content: center
+    justify-content: center;
 `
 
 const Img = () =>{
@@ -494,7 +494,7 @@ const IWhole = styled.div`
     font-family: SVN-Gilroy;
     font-size: 7vh;
     color: ${secondaryColor};
-    opacity: 0
+    opacity: 0;
 `
 
 const Leaving = keyframes`
@@ -541,7 +541,7 @@ const I = styled.div`
     flex-direction: column;
     align-items: flex-end;
     padding-right: 15px;
-    overflow: hidden
+    overflow: hidden;
 `
 
 const ISingle = styled.div`
@@ -614,368 +614,373 @@ export default () => {
         const bottomUp = document.getElementById('bottom-up');
         const fullStack = document.getElementById('full-stack');
 
-        
-        if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
-            document.getElementById('opening-tag').style.display = 'none';
-            document.getElementById('bottom-q-whole').style.display = 'none';
-            document.getElementById('i-part').style.display = 'none';
-        } else {
-
-            document.getElementById('opening-tag').style.opacity = '1';
-        
-            bottomBottom.scrollTo({
-                top: (bottomBottom.clientHeight),
-                behavior: 'smooth'
-            })
-            bottomUp.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-            setTimeout(() => {
-                fullStack.style.color = `${secondaryColor}`;
-                bottomUp.style.color = `${secondaryColor}`;
-                document.getElementById('front-end').style.color = `${secondaryColor}`;
-                document.getElementById('back-end').style.color = `${secondaryColor}`;
-            }, 1000)
-
-            for (let item of document.getElementsByClassName('scrollable-i')){
-                item.scrollTo({
-                    top: 10000,
+        if ($(window).width() > 991) {
+            if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
+                document.getElementById('opening-tag').style.display = 'none';
+                document.getElementById('bottom-q-whole').style.display = 'none';
+                document.getElementById('i-part').style.display = 'none';
+            } else {
+    
+                document.getElementById('opening-tag').style.opacity = '1';
+            
+                bottomBottom.scrollTo({
+                    top: (bottomBottom.clientHeight),
                     behavior: 'smooth'
                 })
-            }
-
-            const typingSpanInner = document.getElementById('typing-span-inner');
-            const typingSpanOuter = document.getElementById('typing-span-outer');
-
-            typingSpanInner.classList.add('enwide');
-            
-            /*
-            typingSpanInner.addEventListener('animationend', () => {
-
-                typingSpanInner.style.minWidth = '250px';
-                typingSpanInner.style.maxWidth = '250px';
-
-                typingSpanInner.innerHTML = 'TrueCodes';
-
-                typingSpanInner.classList.add('after');
-
+                bottomUp.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })
+                setTimeout(() => {
+                    fullStack.style.color = `${secondaryColor}`;
+                    bottomUp.style.color = `${secondaryColor}`;
+                    document.getElementById('front-end').style.color = `${secondaryColor}`;
+                    document.getElementById('back-end').style.color = `${secondaryColor}`;
+                }, 1000)
+    
+                for (let item of document.getElementsByClassName('scrollable-i')){
+                    item.scrollTo({
+                        top: 10000,
+                        behavior: 'smooth'
+                    })
+                }
+    
+                const typingSpanInner = document.getElementById('typing-span-inner');
+                const typingSpanOuter = document.getElementById('typing-span-outer');
+    
+                typingSpanInner.classList.add('enwide');
+                
+                /*
                 typingSpanInner.addEventListener('animationend', () => {
+    
+                    typingSpanInner.style.minWidth = '250px';
+                    typingSpanInner.style.maxWidth = '250px';
+    
+                    typingSpanInner.innerHTML = 'TrueCodes';
+    
+                    typingSpanInner.classList.add('after');
+    
+                    typingSpanInner.addEventListener('animationend', () => {
+                        typingSpanInner.classList.remove('after');
+                        typingSpanInner.classList.add('typed');
+                    })
+                    setTimeout(() => {
+                        typingSpanOuter.classList.add('rotate');
+                        typingSpanOuter.addEventListener('animationend', () => {
+                            typingSpanOuter.style.transform = 'rotateX(-90deg)';
+                            typingSpanOuter.classList.remove('rotate');
+                        })
+                    }, 1000)
+                })*/
+    
+                setTimeout(() => {
+    
+                    typingSpanInner.style.minWidth = '250px';
+                    typingSpanInner.style.maxWidth = '250px';
+    
+                    typingSpanInner.innerHTML = 'TrueCodes';
+    
+                    typingSpanInner.classList.add('after');
+    
+                }, 500)
+    
+                setTimeout(() => {
+                    
                     typingSpanInner.classList.remove('after');
                     typingSpanInner.classList.add('typed');
-                })
+                    
+                }, 1500)
+    
                 setTimeout(() => {
                     typingSpanOuter.classList.add('rotate');
                     typingSpanOuter.addEventListener('animationend', () => {
                         typingSpanOuter.style.transform = 'rotateX(-90deg)';
                         typingSpanOuter.classList.remove('rotate');
                     })
-                }, 1000)
-            })*/
-
-            setTimeout(() => {
-
-                typingSpanInner.style.minWidth = '250px';
-                typingSpanInner.style.maxWidth = '250px';
-
-                typingSpanInner.innerHTML = 'TrueCodes';
-
-                typingSpanInner.classList.add('after');
-
-            }, 500)
-
-            setTimeout(() => {
+                }, 3000)
+    
+                setTimeout(() => {
+                    typingSpanInner.remove();
+                    typingSpanOuter.innerHTML = typingSpanOuter.innerHTML.replace('&#60;&#160;', '');
+                    typingSpanOuter.innerHTML = typingSpanOuter.innerHTML.replace('&#160;&#47;&#62;', '');
+                    typingSpanOuter.innerHTML = typingSpanOuter.innerHTML.replace('&lt;&nbsp;&nbsp;/&gt;', '');/*
+                    let toClean = typingSpanOuter.innerHTML;
+                    toClean = toClean.replace('&#60;&#160;', '');
+                    toClean = toClean.replace('&#160;&#47;&#62;', '');
+                    toClean = toClean.replace('&lt;&nbsp;&nbsp;/&gt;', '');
+    
+                    typingSpanOuter.innerHTML = toClean;
+                    console.log(toClean)*/
+    
+                    document.getElementById('abc').style.transform = 'scale(1)';
+                    document.getElementById('abc').style.maxWidth = 'fit-content';
+                    typingSpanOuter.classList.add('rotate-back');
+                    typingSpanOuter.addEventListener('animationend', () => {
+                        typingSpanOuter.style.transform = 'rotate(0)';
+                        typingSpanOuter.classList.remove('rotate-back')
+                    })
+                }, 3450)
+    
+                setTimeout(() => {
+                    bottomUp.scrollTo({
+                        top: (bottomUp.clientHeight),
+                        behavior: 'smooth'
+                    })
+                }, 4800)
+    
+                setTimeout(() => {
+                    bottomUp.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    })
+    
+                    bottomBottom.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    })
+                }, 6500)
+    
+                setTimeout(() => {
+                    bottomBottom.scrollTo({
+                        top: (bottomBottom.clientHeight),
+                        behavior: 'smooth'
+                    })
+                }, 8500)
+    
+                setTimeout(() => {
+                    let i = 1;
+                    for (let item of document.getElementsByClassName('img-2')){
+                        item.id = 'left-'+i;
+                        item.classList.add('img-float');
+                        i+=1;
+                    }
+                    i = 1;
+                    for (let item of document.getElementsByClassName('img-3')){
+                        item.id = 'right-'+i;
+                        item.classList.add('img-float');
+                        i+=1;
+                    }
+                }, 8900)
+    
+                setTimeout(() => {
+                    for (let item of document.getElementsByClassName('img-2')){
+                        item.style.transform = 'translateX(-400px)';
+                        item.style.opacity = '.1';
+                    }
+                    for (let item of document.getElementsByClassName('img-3')){
+                        item.style.transform = 'translateX(400px)';
+                        item.style.opacity = '.1';
+                    }
+                }, 8900)
+    
+                setTimeout(() => {
+                    document.getElementById('left-1').classList.add('uppest');
+                    document.getElementById('left-2').classList.add('upper');
+                    document.getElementById('left-3').classList.add('up');
+                    document.getElementById('left-4').classList.add('down');
+                    document.getElementById('left-5').classList.add('downer');
+                    document.getElementById('left-6').classList.add('downest');
+                    document.getElementById('right-1').classList.add('uppest');
+                    document.getElementById('right-2').classList.add('upper');
+                    document.getElementById('right-3').classList.add('up');
+                    document.getElementById('right-5').classList.add('down');
+                    document.getElementById('right-6').classList.add('downer');
+                    document.getElementById('right-7').classList.add('downest');
+                }, 9500)
                 
-                typingSpanInner.classList.remove('after');
-                typingSpanInner.classList.add('typed');
+                setTimeout(() => {
+                    document.getElementById('left-1').style.transform = 'translateX(-400px) translateY(-300px)';
+                    document.getElementById('left-2').style.transform = 'translateX(-400px) translateY(-200px)';
+                    document.getElementById('left-3').style.transform = 'translateX(-400px) translateY(-100px)';
+                    document.getElementById('left-4').style.transform = 'translateX(-400px) translateY(100px)';
+                    document.getElementById('left-5').style.transform = 'translateX(-400px) translateY(200px)';
+                    document.getElementById('left-6').style.transform = 'translateX(-400px) translateY(300px)';
+                    document.getElementById('right-1').style.transform = 'translateX(400px) translateY(-300px)';
+                    document.getElementById('right-2').style.transform = 'translateX(400px) translateY(-200px)';
+                    document.getElementById('right-3').style.transform = 'translateX(400px) translateY(-100px)';
+                    document.getElementById('right-5').style.transform = 'translateX(400px) translateY(100px)';
+                    document.getElementById('right-6').style.transform = 'translateX(400px) translateY(200px)';
+                    document.getElementById('right-7').style.transform = 'translateX(400px) translateY(300px)';
+                }, 9875)
                 
-            }, 1500)
-
-            setTimeout(() => {
-                typingSpanOuter.classList.add('rotate');
-                typingSpanOuter.addEventListener('animationend', () => {
-                    typingSpanOuter.style.transform = 'rotateX(-90deg)';
-                    typingSpanOuter.classList.remove('rotate');
-                })
-            }, 3000)
-
-            setTimeout(() => {
-                typingSpanInner.remove();
-                typingSpanOuter.innerHTML = typingSpanOuter.innerHTML.replace('&#60;&#160;', '');
-                typingSpanOuter.innerHTML = typingSpanOuter.innerHTML.replace('&#160;&#47;&#62;', '');
-                typingSpanOuter.innerHTML = typingSpanOuter.innerHTML.replace('&lt;&nbsp;&nbsp;/&gt;', '');/*
-                let toClean = typingSpanOuter.innerHTML;
-                toClean = toClean.replace('&#60;&#160;', '');
-                toClean = toClean.replace('&#160;&#47;&#62;', '');
-                toClean = toClean.replace('&lt;&nbsp;&nbsp;/&gt;', '');
-
-                typingSpanOuter.innerHTML = toClean;
-                console.log(toClean)*/
-
-                document.getElementById('abc').style.transform = 'scale(1)';
-                document.getElementById('abc').style.maxWidth = 'fit-content';
-                typingSpanOuter.classList.add('rotate-back');
-                typingSpanOuter.addEventListener('animationend', () => {
-                    typingSpanOuter.style.transform = 'rotate(0)';
-                    typingSpanOuter.classList.remove('rotate-back')
-                })
-            }, 3450)
-
-            setTimeout(() => {
-                bottomUp.scrollTo({
-                    top: (bottomUp.clientHeight),
-                    behavior: 'smooth'
-                })
-            }, 4800)
-
-            setTimeout(() => {
-                bottomUp.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })
-
-                bottomBottom.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })
-            }, 6500)
-
-            setTimeout(() => {
-                bottomBottom.scrollTo({
-                    top: (bottomBottom.clientHeight),
-                    behavior: 'smooth'
-                })
-            }, 8500)
-
-            setTimeout(() => {
-                let i = 1;
-                for (let item of document.getElementsByClassName('img-2')){
-                    item.id = 'left-'+i;
-                    item.classList.add('img-float');
-                    i+=1;
-                }
-                i = 1;
-                for (let item of document.getElementsByClassName('img-3')){
-                    item.id = 'right-'+i;
-                    item.classList.add('img-float');
-                    i+=1;
-                }
-            }, 8900)
-
-            setTimeout(() => {
-                for (let item of document.getElementsByClassName('img-2')){
-                    item.style.transform = 'translateX(-400px)';
-                    item.style.opacity = '.1';
-                }
-                for (let item of document.getElementsByClassName('img-3')){
-                    item.style.transform = 'translateX(400px)';
-                    item.style.opacity = '.1';
-                }
-            }, 8900)
-
-            setTimeout(() => {
-                document.getElementById('left-1').classList.add('uppest');
-                document.getElementById('left-2').classList.add('upper');
-                document.getElementById('left-3').classList.add('up');
-                document.getElementById('left-4').classList.add('down');
-                document.getElementById('left-5').classList.add('downer');
-                document.getElementById('left-6').classList.add('downest');
-                document.getElementById('right-1').classList.add('uppest');
-                document.getElementById('right-2').classList.add('upper');
-                document.getElementById('right-3').classList.add('up');
-                document.getElementById('right-5').classList.add('down');
-                document.getElementById('right-6').classList.add('downer');
-                document.getElementById('right-7').classList.add('downest');
-            }, 9500)
-            
-            setTimeout(() => {
-                document.getElementById('left-1').style.transform = 'translateX(-400px) translateY(-300px)';
-                document.getElementById('left-2').style.transform = 'translateX(-400px) translateY(-200px)';
-                document.getElementById('left-3').style.transform = 'translateX(-400px) translateY(-100px)';
-                document.getElementById('left-4').style.transform = 'translateX(-400px) translateY(100px)';
-                document.getElementById('left-5').style.transform = 'translateX(-400px) translateY(200px)';
-                document.getElementById('left-6').style.transform = 'translateX(-400px) translateY(300px)';
-                document.getElementById('right-1').style.transform = 'translateX(400px) translateY(-300px)';
-                document.getElementById('right-2').style.transform = 'translateX(400px) translateY(-200px)';
-                document.getElementById('right-3').style.transform = 'translateX(400px) translateY(-100px)';
-                document.getElementById('right-5').style.transform = 'translateX(400px) translateY(100px)';
-                document.getElementById('right-6').style.transform = 'translateX(400px) translateY(200px)';
-                document.getElementById('right-7').style.transform = 'translateX(400px) translateY(300px)';
-            }, 9875)
-            
-            setTimeout(() => {
-                document.getElementById('abc').classList.add('shine-and-die');
-                for (let item of document.getElementsByClassName('img-2')){
-                    item.classList.add('shine-and-die');
-                }
-                for (let item of document.getElementsByClassName('img-3')){
-                    item.classList.add('shine-and-die');
-                }
-            }, 10300)
-            
-            setTimeout(() => {
-                document.getElementById('abc').style.opacity = '0';
-                for (let item of document.getElementsByClassName('img-2')){
-                    item.style.opacity = '0';
-                }
-                for (let item of document.getElementsByClassName('img-3')){
-                    item.style.opacity = '0';
-                }
-            }, 11050)
-            
-            const scrollableI1 = document.getElementById('scrollable-i-1');
-            const scrollableI2 = document.getElementById('scrollable-i-2');
-            const scrollableI3 = document.getElementById('scrollable-i-3');
-            const scrollableI4 = document.getElementById('scrollable-i-4');
-            const scrollableI5 = document.getElementById('scrollable-i-5');
-
-            const typableWhatIDo1 = document.getElementById('typable-what-i-do-1');
-            const typableWhatIDo2 = document.getElementById('typable-what-i-do-2');
-            const typableWhatIDo3 = document.getElementById('typable-what-i-do-3');
-            const typableWhatIDo4 = document.getElementById('typable-what-i-do-4');
-            const typableWhatIDo5 = document.getElementById('typable-what-i-do-5');
-
-            const iPart1 = document.getElementById('i-part-1');
-            const iPart2 = document.getElementById('i-part-2');
-            const iPart3 = document.getElementById('i-part-3');
-            const iPart4 = document.getElementById('i-part-4');
-            const iPart5 = document.getElementById('i-part-5');
-
-            setTimeout(() => {
-                document.getElementById('i-part').style.opacity = '1';
-                scrollableI1.scrollTo({
-                    top: scrollableI1.clientHeight,
-                    behavior: 'smooth'
-                })
-            }, 11650)
-
-            setTimeout(() => {
-                typableWhatIDo1.classList.add('typing');
-            }, 12050)
-            
-            setTimeout(() => {
-                typableWhatIDo1.classList.remove('typing');
-                typableWhatIDo1.classList.add('typed');
+                setTimeout(() => {
+                    document.getElementById('abc').classList.add('shine-and-die');
+                    for (let item of document.getElementsByClassName('img-2')){
+                        item.classList.add('shine-and-die');
+                    }
+                    for (let item of document.getElementsByClassName('img-3')){
+                        item.classList.add('shine-and-die');
+                    }
+                }, 10300)
                 
-                scrollableI1.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })
-
-                scrollableI2.scrollTo({
-                    top: scrollableI2.clientHeight,
-                    behavior: 'smooth'
-                })
-
-            }, 13750)
-
-            setTimeout(() => {
-                typableWhatIDo2.classList.add('typing');
-            }, 14450)
-            
-            setTimeout(() => {
-                typableWhatIDo2.classList.remove('typing');
-                typableWhatIDo2.classList.add('typed');
+                setTimeout(() => {
+                    document.getElementById('abc').style.opacity = '0';
+                    for (let item of document.getElementsByClassName('img-2')){
+                        item.style.opacity = '0';
+                    }
+                    for (let item of document.getElementsByClassName('img-3')){
+                        item.style.opacity = '0';
+                    }
+                }, 11050)
                 
-                scrollableI2.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })
-
-                scrollableI3.scrollTo({
-                    top: scrollableI4.clientHeight,
-                    behavior: 'smooth'
-                })
-
-            }, 15950)
-            
-            setTimeout(() => {
-                typableWhatIDo3.classList.add('typing');
-            }, 16350)
-            
-            setTimeout(() => {
-                typableWhatIDo3.classList.remove('typing');
-                typableWhatIDo3.classList.add('typed');
+                const scrollableI1 = document.getElementById('scrollable-i-1');
+                const scrollableI2 = document.getElementById('scrollable-i-2');
+                const scrollableI3 = document.getElementById('scrollable-i-3');
+                const scrollableI4 = document.getElementById('scrollable-i-4');
+                const scrollableI5 = document.getElementById('scrollable-i-5');
+    
+                const typableWhatIDo1 = document.getElementById('typable-what-i-do-1');
+                const typableWhatIDo2 = document.getElementById('typable-what-i-do-2');
+                const typableWhatIDo3 = document.getElementById('typable-what-i-do-3');
+                const typableWhatIDo4 = document.getElementById('typable-what-i-do-4');
+                const typableWhatIDo5 = document.getElementById('typable-what-i-do-5');
+    
+                const iPart1 = document.getElementById('i-part-1');
+                const iPart2 = document.getElementById('i-part-2');
+                const iPart3 = document.getElementById('i-part-3');
+                const iPart4 = document.getElementById('i-part-4');
+                const iPart5 = document.getElementById('i-part-5');
+    
+                setTimeout(() => {
+                    document.getElementById('i-part').style.opacity = '1';
+                    scrollableI1.scrollTo({
+                        top: scrollableI1.clientHeight,
+                        behavior: 'smooth'
+                    })
+                }, 11650)
+    
+                setTimeout(() => {
+                    typableWhatIDo1.classList.add('typing');
+                }, 12050)
                 
-                scrollableI3.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })
-
-                scrollableI4.scrollTo({
-                    top: scrollableI4.clientHeight,
-                    behavior: 'smooth'
-                })
-
-            }, 18050)
-            
-            setTimeout(() => {
-                typableWhatIDo4.classList.add('typing');
-            }, 18450)
-            
-            setTimeout(() => {
-                typableWhatIDo4.classList.remove('typing');
-                typableWhatIDo4.classList.add('typed');
+                setTimeout(() => {
+                    typableWhatIDo1.classList.remove('typing');
+                    typableWhatIDo1.classList.add('typed');
+                    
+                    scrollableI1.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    })
+    
+                    scrollableI2.scrollTo({
+                        top: scrollableI2.clientHeight,
+                        behavior: 'smooth'
+                    })
+    
+                }, 13750)
+    
+                setTimeout(() => {
+                    typableWhatIDo2.classList.add('typing');
+                }, 14450)
                 
-                scrollableI4.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })
-
-                scrollableI5.scrollTo({
-                    top: scrollableI5.clientHeight,
-                    behavior: 'smooth'
-                })
-
-            }, 20050)
-            
-            setTimeout(() => {
-                typableWhatIDo5.classList.add('typing');
-            }, 20450)
-            
-            setTimeout(() => {
-                typableWhatIDo5.classList.remove('typing');
-                typableWhatIDo5.classList.add('typed');
-                typableWhatIDo5.style.opacity = '1';
-
-            }, 22050)
-            
-            setTimeout(() => {
-                iPart1.classList.add('leaving');
-            }, 23100)
-            
-            setTimeout(() => {
-                iPart2.classList.add('leaving');
-            }, 23300)
-            
-            setTimeout(() => {
-                iPart3.classList.add('leaving');
-            }, 23500)
-            
-            setTimeout(() => {
-                iPart4.classList.add('leaving');
-            }, 23700)
-            
-            setTimeout(() => {
-                iPart5.classList.add('leaving');
-                iPart1.style.opacity = '0';
-            }, 23850)
-            
-            setTimeout(() => {
-                iPart2.style.opacity = '0';
-            }, 24050)
-            
-            setTimeout(() => {
-                iPart3.style.opacity = '0';
-            }, 24200)
-            
-            setTimeout(() => {
-                iPart4.style.opacity = '0';
-            }, 24400)
-            
-            setTimeout(() => {
-                iPart5.style.opacity = '0';
-            }, 24550)
+                setTimeout(() => {
+                    typableWhatIDo2.classList.remove('typing');
+                    typableWhatIDo2.classList.add('typed');
+                    
+                    scrollableI2.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    })
+    
+                    scrollableI3.scrollTo({
+                        top: scrollableI4.clientHeight,
+                        behavior: 'smooth'
+                    })
+    
+                }, 15950)
+                
+                setTimeout(() => {
+                    typableWhatIDo3.classList.add('typing');
+                }, 16350)
+                
+                setTimeout(() => {
+                    typableWhatIDo3.classList.remove('typing');
+                    typableWhatIDo3.classList.add('typed');
+                    
+                    scrollableI3.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    })
+    
+                    scrollableI4.scrollTo({
+                        top: scrollableI4.clientHeight,
+                        behavior: 'smooth'
+                    })
+    
+                }, 18050)
+                
+                setTimeout(() => {
+                    typableWhatIDo4.classList.add('typing');
+                }, 18450)
+                
+                setTimeout(() => {
+                    typableWhatIDo4.classList.remove('typing');
+                    typableWhatIDo4.classList.add('typed');
+                    
+                    scrollableI4.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    })
+    
+                    scrollableI5.scrollTo({
+                        top: scrollableI5.clientHeight,
+                        behavior: 'smooth'
+                    })
+    
+                }, 20050)
+                
+                setTimeout(() => {
+                    typableWhatIDo5.classList.add('typing');
+                }, 20450)
+                
+                setTimeout(() => {
+                    typableWhatIDo5.classList.remove('typing');
+                    typableWhatIDo5.classList.add('typed');
+                    typableWhatIDo5.style.opacity = '1';
+    
+                }, 22050)
+                
+                setTimeout(() => {
+                    iPart1.classList.add('leaving');
+                }, 23100)
+                
+                setTimeout(() => {
+                    iPart2.classList.add('leaving');
+                }, 23300)
+                
+                setTimeout(() => {
+                    iPart3.classList.add('leaving');
+                }, 23500)
+                
+                setTimeout(() => {
+                    iPart4.classList.add('leaving');
+                }, 23700)
+                
+                setTimeout(() => {
+                    iPart5.classList.add('leaving');
+                    iPart1.style.opacity = '0';
+                }, 23850)
+                
+                setTimeout(() => {
+                    iPart2.style.opacity = '0';
+                }, 24050)
+                
+                setTimeout(() => {
+                    iPart3.style.opacity = '0';
+                }, 24200)
+                
+                setTimeout(() => {
+                    iPart4.style.opacity = '0';
+                }, 24400)
+                
+                setTimeout(() => {
+                    iPart5.style.opacity = '0';
+                }, 24550)
+            }
+        } else {
+            document.getElementById('opening-tag').style.display = 'none';
+            document.getElementById('bottom-q-whole').style.display = 'none';
+            document.getElementById('i-part').style.display = 'none';
         }
     })
 

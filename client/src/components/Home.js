@@ -349,41 +349,47 @@ export default (props) => {
         const subNameDiv = document.getElementById('sub-name');
         const subSubNameDiv = document.getElementById('sub-sub-name');
 
-        if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
+        if ($(window).width() > 991) {
+            if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
+                nameDiv.style.opacity = '1';
+                subNameDiv.style.opacity = '1';
+                subSubNameDiv.style.opacity = '.5';
+            } else {
+    
+                sessionStorage.setItem('init-anim', '1');
+                
+                mainDiv.style.background = 'transparent';
+                mainDiv.style.border = '1px solid transparent';
+                mainDiv.style.boxShadow = '0 0 0';
+    
+                setTimeout(() => {
+                    nameDiv.classList.add('float');
+                }, 27500);
+    
+                setTimeout(() => {
+                    subNameDiv.classList.add('float');
+                }, 27700);
+                
+                setTimeout(() => {
+                    subSubNameDiv.classList.add('float');
+                }, 27900);
+                
+                setTimeout(() => {
+                    nameDiv.style.opacity = '1';
+                }, 28250);
+                
+                setTimeout(() => {
+                    subNameDiv.style.opacity = '.5';
+                }, 28450);
+                
+                setTimeout(() => {
+                    subSubNameDiv.style.opacity = '.75';
+                }, 28650);
+            }
+        } else {
             nameDiv.style.opacity = '1';
             subNameDiv.style.opacity = '1';
             subSubNameDiv.style.opacity = '.5';
-        } else {
-
-            sessionStorage.setItem('init-anim', '1');
-            
-            mainDiv.style.background = 'transparent';
-            mainDiv.style.border = '1px solid transparent';
-            mainDiv.style.boxShadow = '0 0 0';
-
-            setTimeout(() => {
-                nameDiv.classList.add('float');
-            }, 27500);
-
-            setTimeout(() => {
-                subNameDiv.classList.add('float');
-            }, 27700);
-            
-            setTimeout(() => {
-                subSubNameDiv.classList.add('float');
-            }, 27900);
-            
-            setTimeout(() => {
-                nameDiv.style.opacity = '1';
-            }, 28250);
-            
-            setTimeout(() => {
-                subNameDiv.style.opacity = '.5';
-            }, 28450);
-            
-            setTimeout(() => {
-                subSubNameDiv.style.opacity = '.75';
-            }, 28650);
         }
     })
 

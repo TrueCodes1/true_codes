@@ -94,17 +94,21 @@ export default () => {
 
         const photoDiv = document.getElementById('personal-photo-div');
 
-        if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
-            photoDiv.style.opacity = '1';
-        } else {
-
-            setTimeout(() => {
-                photoDiv.classList.add('float');
-            }, 27200);
-
-            setTimeout(() => {
+        if ($(window).width() > 991) {
+            if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
                 photoDiv.style.opacity = '1';
-            }, 27950);
+            } else {
+    
+                setTimeout(() => {
+                    photoDiv.classList.add('float');
+                }, 27200);
+    
+                setTimeout(() => {
+                    photoDiv.style.opacity = '1';
+                }, 27950);
+            }
+        } else {
+            photoDiv.style.opacity = '1';
         }
     })
 

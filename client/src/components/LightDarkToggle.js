@@ -121,14 +121,18 @@ export default function LightDarkToggle(props) {
         const Switch = document.getElementById('main-switch');
         const switchBall = document.getElementById('switch-ball');
 
-        if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
-            Switch.style.opacity = '1';
-        } else {
-
-            setTimeout(() => {
-                Switch.style.transition = 'all .5s ease';
+        if ($(window).width() > 991) {
+            if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
                 Switch.style.opacity = '1';
-            }, 29000)
+            } else {
+    
+                setTimeout(() => {
+                    Switch.style.transition = 'all .5s ease';
+                    Switch.style.opacity = '1';
+                }, 29000)
+            }
+        } else {
+            Switch.style.opacity = '1';
         }
 
     })
