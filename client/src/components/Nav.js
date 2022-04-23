@@ -330,43 +330,53 @@ function Nav(props) {
             let subNameDiv = document.getElementById('sub-name');
             let subSubNameDiv = document.getElementById('sub-sub-name');
 
-            nameDiv.style.opacity = '0';
-            subNameDiv.style.opacity = '0';
-            subSubNameDiv.style.opacity = '0';
+            if ($(window).width() < 577) {
+                $(mainDiv).css('display', 'flex');
+                hideMobileMenu();
+                setTimeout(() => {
+                    moving = false
+                }, 2600)
+            } else {
 
-            mainDiv.style.display = 'flex';
-            mainDiv.style.opacity = '1';
-            
-            setTimeout(() => {
-                nameDiv.classList.add('float');
-            }, 200)
-            
-            setTimeout(() => {
-                subNameDiv.classList.add('float');
-            }, 400)
-            
-            setTimeout(() => {
-                subSubNameDiv.classList.add('float');
-            }, 600)
-            
-            setTimeout(() => {
-                nameDiv.style.opacity = '1';
-            }, 950)
-            
-            setTimeout(() => {
-                subNameDiv.style.opacity = '.5';
-            }, 1150)
-            
-            setTimeout(() => {
-                subSubNameDiv.style.opacity = '.75';
+                nameDiv.style.opacity = '0';
+                subNameDiv.style.opacity = '0';
+                subSubNameDiv.style.opacity = '0';
+    
+                mainDiv.style.display = 'flex';
+                mainDiv.style.opacity = '1';
                 
-                nameDiv.classList.remove('float');
-                subNameDiv.classList.remove('float');
-                subSubNameDiv.classList.remove('float');
+                setTimeout(() => {
+                    nameDiv.classList.add('float');
+                }, 200)
+                
+                setTimeout(() => {
+                    subNameDiv.classList.add('float');
+                }, 400)
+                
+                setTimeout(() => {
+                    subSubNameDiv.classList.add('float');
+                }, 600)
+                
+                setTimeout(() => {
+                    nameDiv.style.opacity = '1';
+                }, 950)
+                
+                setTimeout(() => {
+                    subNameDiv.style.opacity = '.5';
+                }, 1150)
+                
+                setTimeout(() => {
+                    subSubNameDiv.style.opacity = '.75';
+                    
+                    nameDiv.classList.remove('float');
+                    subNameDiv.classList.remove('float');
+                    subSubNameDiv.classList.remove('float');
+    
+                    moving = false
+    
+                }, 1350)
 
-                moving = false
-
-            }, 1350)
+            }
 
         }
         
@@ -376,39 +386,47 @@ function Nav(props) {
             let choices = document.getElementById('work-choices');
             let singleChoices = document.getElementsByClassName('choice-work');
 
-            mainDiv.style.opacity = '1';
-            mainDiv.style.visibility = 'visible';
-
-            for (let choice of singleChoices) {
-                choice.style.opacity = '0'
-            }
-
-            choices.style.opacity = '1';
-            choices.style.visibility = 'visible';
-            choices.classList.add('come');
-
-            setTimeout(() => {
-                choices.style.minHeight = '70vh';
-                choices.style.maxHeight = '70vh';
-                choices.classList.remove('come');
-                moving = false
-            }, 1000)
-
-            let timeout = 70;
-
-            for (let choice of singleChoices) {
+            if ($(window).width() < 577) {
+                $(mainDiv).css('display', 'flex');
+                hideMobileMenu();
                 setTimeout(() => {
-                    choice.classList.add('come');
-                    choice.style.opacity = '.75';
-                }, timeout)
-                choice.addEventListener('animationend', () => {
-                    choice.style.opacity = '.75';
-                    choice.classList.remove('come');
-                })
-                timeout+=70
-                
-            }
+                    moving = false
+                }, 2600)
+            } else {
 
+                mainDiv.style.opacity = '1';
+                mainDiv.style.visibility = 'visible';
+    
+                for (let choice of singleChoices) {
+                    choice.style.opacity = '0'
+                }
+    
+                choices.style.opacity = '1';
+                choices.style.visibility = 'visible';
+                choices.classList.add('come');
+    
+                setTimeout(() => {
+                    choices.style.minHeight = '70vh';
+                    choices.style.maxHeight = '70vh';
+                    choices.classList.remove('come');
+                    moving = false
+                }, 1000)
+    
+                let timeout = 70;
+    
+                for (let choice of singleChoices) {
+                    setTimeout(() => {
+                        choice.classList.add('come');
+                        choice.style.opacity = '.75';
+                    }, timeout)
+                    choice.addEventListener('animationend', () => {
+                        choice.style.opacity = '.75';
+                        choice.classList.remove('come');
+                    })
+                    timeout+=70
+                    
+                }
+            }
 
         }
         
@@ -419,35 +437,45 @@ function Nav(props) {
             let textarea = document.getElementById('contact-textarea');
             let button = document.getElementById('contact-button');
 
-            form.style.visibility = 'visible';
-
-            for (let input of inputs){
-                input.classList.add('come');
+            if ($(window).width() < 577) {
+                $(form).css('display', 'flex');
+                hideMobileMenu();
                 setTimeout(() => {
-                    input.classList.remove('come');
-                    input.style.color = '#e9f1f7';
-                    input.style.boxShadow = '13px 13px 26px #0d1318, -13px -13px 26px #19232e'
+                    moving = false
+                }, 2600)
+            } else {
+
+                form.style.visibility = 'visible';
+    
+                for (let input of inputs){
+                    input.classList.add('come');
+                    setTimeout(() => {
+                        input.classList.remove('come');
+                        input.style.color = '#e9f1f7';
+                        input.style.boxShadow = '13px 13px 26px #0d1318, -13px -13px 26px #19232e'
+                    }, 1400)
+                }
+    
+                textarea.classList.add('come');
+                setTimeout(() => {
+                    textarea.classList.remove('come');
+                    textarea.style.color = '#e9f1f7';
+                    textarea.style.boxShadow = '13px 13px 26px #0d1318, -13px -13px 26px #19232e'
+                
+                    button.style.color = '#e9f1f7';
+                    button.classList.add('come');
+                
                 }, 1400)
+    
+                setTimeout(() => {
+                    button.classList.remove('come');
+                    button.style.padding = '.75em 0 .75em 15px';
+    
+                    moving = false
+    
+                }, 1700)
+
             }
-
-            textarea.classList.add('come');
-            setTimeout(() => {
-                textarea.classList.remove('come');
-                textarea.style.color = '#e9f1f7';
-                textarea.style.boxShadow = '13px 13px 26px #0d1318, -13px -13px 26px #19232e'
-            
-                button.style.color = '#e9f1f7';
-                button.classList.add('come');
-            
-            }, 1400)
-
-            setTimeout(() => {
-                button.classList.remove('come');
-                button.style.padding = '.75em 0 .75em 15px';
-
-                moving = false
-
-            }, 1700)
         }
         
         const LeaveHome = (destination) => {
@@ -457,37 +485,8 @@ function Nav(props) {
             let subNameDiv = document.getElementById('sub-name');
             let subSubNameDiv = document.getElementById('sub-sub-name');
 
-            mainDiv.style.display = 'flex';
-            mainDiv.style.opacity = '1';
-            
-            setTimeout(() => {
-                nameDiv.classList.add('float-out');
-            }, 200)
-            
-            setTimeout(() => {
-                subNameDiv.classList.add('float-out');
-            }, 400)
-            
-            setTimeout(() => {
-                subSubNameDiv.classList.add('float-out');
-            }, 600)
-            
-            setTimeout(() => {
-                nameDiv.style.opacity = '0';
-            }, 950)
-            
-            setTimeout(() => {
-                subNameDiv.style.opacity = '0';
-            }, 1150)
-            
-            setTimeout(() => {
-                subSubNameDiv.style.opacity = '0';
-                mainDiv.style.display = 'none';
-                
-                nameDiv.classList.remove('float-out');
-                subNameDiv.classList.remove('float-out');
-                subSubNameDiv.classList.remove('float-out');
-
+            if ($(window).width() < 577) {
+                $(mainDiv).css('display', 'none');
                 switch(destination){
                     case 'my work':
                         ComeToWork();
@@ -499,8 +498,54 @@ function Nav(props) {
                         ComeToContact();
                         break
                 }
+            } else {
 
-            }, 1350)
+                mainDiv.style.display = 'flex';
+                mainDiv.style.opacity = '1';
+                
+                setTimeout(() => {
+                    nameDiv.classList.add('float-out');
+                }, 200)
+                
+                setTimeout(() => {
+                    subNameDiv.classList.add('float-out');
+                }, 400)
+                
+                setTimeout(() => {
+                    subSubNameDiv.classList.add('float-out');
+                }, 600)
+                
+                setTimeout(() => {
+                    nameDiv.style.opacity = '0';
+                }, 950)
+                
+                setTimeout(() => {
+                    subNameDiv.style.opacity = '0';
+                }, 1150)
+                
+                setTimeout(() => {
+                    subSubNameDiv.style.opacity = '0';
+                    mainDiv.style.display = 'none';
+                    
+                    nameDiv.classList.remove('float-out');
+                    subNameDiv.classList.remove('float-out');
+                    subSubNameDiv.classList.remove('float-out');
+    
+                    switch(destination){
+                        case 'my work':
+                            ComeToWork();
+                            break
+                        case 'who I am':
+                            ComeToHome();
+                            break
+                        case 'hit me up':
+                            ComeToContact();
+                            break
+                    }
+    
+                }, 1350)
+
+            }
 
         }
 
@@ -509,31 +554,8 @@ function Nav(props) {
             let choices = document.getElementById('work-choices');
             let singleChoices = document.getElementsByClassName('choice-work');
 
-            for (let choice of singleChoices) {
-                choice.classList.add('leave');
-                setTimeout(() => {
-                    choice.style.opacity = '0';
-                    choice.classList.remove('leave');
-                }, 1250)
-            }
-
-            setTimeout(() => {  
-                choices.classList.add('leave');
-            }, 300)
-
-            setTimeout(() => {
-                choices.style.maxWidth = '1px'; 
-                choices.style.minHeight = '0';
-                choices.style.maxHeight = '0';
-                choices.style.opacity = '0';
-                choices.style.visibility = 'hidden';
-                /*
-                for (let choice of singleChoices) {
-                    choice.classList.remove('leave');
-                    choice.style.opacity = '0';
-                }*/
-                choices.classList.remove('leave');
-                
+            if ($(window).width() < 577) {
+                $('#main-div-work').css('display', 'none');
                 switch(destination){
                     case 'my work':
                         ComeToWork();
@@ -545,8 +567,47 @@ function Nav(props) {
                         ComeToContact();
                         break
                 }
+            } else {
 
-            }, 1500)
+                for (let choice of singleChoices) {
+                    choice.classList.add('leave');
+                    setTimeout(() => {
+                        choice.style.opacity = '0';
+                        choice.classList.remove('leave');
+                    }, 1250)
+                }
+    
+                setTimeout(() => {  
+                    choices.classList.add('leave');
+                }, 300)
+    
+                setTimeout(() => {
+                    choices.style.maxWidth = '1px'; 
+                    choices.style.minHeight = '0';
+                    choices.style.maxHeight = '0';
+                    choices.style.opacity = '0';
+                    choices.style.visibility = 'hidden';
+                    /*
+                    for (let choice of singleChoices) {
+                        choice.classList.remove('leave');
+                        choice.style.opacity = '0';
+                    }*/
+                    choices.classList.remove('leave');
+                    
+                    switch(destination){
+                        case 'my work':
+                            ComeToWork();
+                            break
+                        case 'who I am':
+                            ComeToHome();
+                            break
+                        case 'hit me up':
+                            ComeToContact();
+                            break
+                    }
+    
+                }, 1500)
+            }
 
         }
 
@@ -557,34 +618,8 @@ function Nav(props) {
             let textarea = document.getElementById('contact-textarea');
             let button = document.getElementById('contact-button');
 
-            form.style.visibility = 'visible';
-
-            for (let input of inputs){
-                input.classList.add('leave');
-                setTimeout(() => {
-                    input.classList.remove('leave');
-                    input.style.color = '#131b23';
-                    input.style.boxShadow = 'none'
-                }, 1400)
-            }
-
-            textarea.classList.add('leave');
-            setTimeout(() => {
-                textarea.classList.remove('leave');
-                textarea.style.color = '#131b23';
-                textarea.style.boxShadow = 'none'
-            
-                button.style.color = '#e9f1f7';
-                button.classList.add('leave');
-            
-            }, 1400)
-
-            setTimeout(() => {
-                button.style.color = '#131b23';
-                button.classList.remove('leave');
-
-                form.style.visibility = 'hidden';
-
+            if ($(window).width() < 577) {
+                $(form).css('display', 'none');
                 switch(destination){
                     case 'my work':
                         ComeToWork();
@@ -596,8 +631,50 @@ function Nav(props) {
                         ComeToContact();
                         break
                 }
+            } else {
 
-            }, 1450)
+                form.style.visibility = 'visible';
+    
+                for (let input of inputs){
+                    input.classList.add('leave');
+                    setTimeout(() => {
+                        input.classList.remove('leave');
+                        input.style.color = '#131b23';
+                        input.style.boxShadow = 'none'
+                    }, 1400)
+                }
+    
+                textarea.classList.add('leave');
+                setTimeout(() => {
+                    textarea.classList.remove('leave');
+                    textarea.style.color = '#131b23';
+                    textarea.style.boxShadow = 'none'
+                
+                    button.style.color = '#e9f1f7';
+                    button.classList.add('leave');
+                
+                }, 1400)
+    
+                setTimeout(() => {
+                    button.style.color = '#131b23';
+                    button.classList.remove('leave');
+    
+                    form.style.visibility = 'hidden';
+    
+                    switch(destination){
+                        case 'my work':
+                            ComeToWork();
+                            break
+                        case 'who I am':
+                            ComeToHome();
+                            break
+                        case 'hit me up':
+                            ComeToContact();
+                            break
+                    }
+    
+                }, 1450)
+            }
 
         }
 

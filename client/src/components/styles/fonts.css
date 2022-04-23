@@ -1,7 +1,41 @@
+
+/*
 @import url('http://fonts.cdnfonts.com/css/signerica-fat');
 @import url('http://fonts.cdnfonts.com/css/svn-gilroy');
-                
+  */
+
 /*
 body{
     color: #e9f1f796
 }*/
+
+
+@font-face {
+    font-family: SVN-Gilroy;
+    src: url(./fonts/Gilroy-Thin.ttf);
+    font-weight: 100;
+  }
+  
+@font-face {
+    font-family: SVN-Gilroy;
+    src: url(./fonts/Gilroy-Medium.ttf);
+    font-weight: 300;
+  }
+  
+@font-face {
+    font-family: SVN-Gilroy;
+    src: url(./fonts/Gilroy-Regular.ttf);
+    font-weight: 500;
+  }
+  
+@font-face {
+    font-family: SVN-Gilroy;
+    src: url(./fonts/Gilroy-Bold.ttf);
+    font-weight: 700;
+  }
+  
+@font-face {
+    font-family: SVN-Gilroy;
+    src: url(./fonts/Gilroy-Black.ttf);
+    font-weight: 900;
+  }

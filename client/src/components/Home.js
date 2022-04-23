@@ -260,7 +260,7 @@ const SubDiv = styled.div`
 
 const SubSubDiv = styled.div`
     @media only screen and (max-width: 576px) {
-        font-size: 2.1vh;
+        font-size: 3.75vw;
         color: ${secondaryColor};
         min-width: 100%;
         max-width: 100%;
