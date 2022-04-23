@@ -41,7 +41,7 @@ const NavMain = styled.div`
         left: 0;
         box-sizing: border-box;
         display: flex;
-        visibility: visible;
+        visibility: hidden;
         flex-direction: column;
         align-items: stretch;
         justify-content: center;
@@ -687,8 +687,6 @@ function Nav(props) {
             }, 29400);
             
         }
-
-        $('#nav-main').css('visibility', 'hidden');
 
         const hideMobileMenu = () => {
             $('#burger-mobile').css('display', 'flex');
