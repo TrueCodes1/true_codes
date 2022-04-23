@@ -18,9 +18,8 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
     */
    
-    const index = path.join(__dirname, 'build', 'index.html');
-    res.sendFile(index);
-    
+    res.sendFile('index.html');
+
 });
 
 const port = process.env.PORT || 5000;
