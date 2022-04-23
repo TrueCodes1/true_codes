@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
+import $ from 'jquery';
 
 import './styles/animations.css';
 

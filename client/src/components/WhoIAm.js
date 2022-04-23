@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import $ from 'jquery';
 
 import PersonalPhoto from './PersonalPhoto';
 
