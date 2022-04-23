@@ -53,7 +53,10 @@ const App = () => {
     const [theme, setTheme] = useState('dark');
 
     const changeMode = () => {
+        /*
         theme === 'dark' ? setTheme('light') : setTheme('dark')
+        */
+        alert('Light/Dark change option coming soon!')
     }
     useEffect(() => {
         
