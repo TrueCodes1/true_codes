@@ -58,7 +58,7 @@ const NavMain = styled.div`
             -webkit-animation: 1 .35s ${LeavingMobileNav};
         }
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
         position: fixed;
         min-width: 100vw;
         max-width: 100vw;
@@ -167,7 +167,7 @@ const NavLeaveCrossMobile = styled.div`
             transform: rotateZ(-540deg)
         }
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
         min-width: 120px;
         max-width: 120px;
         min-height: 120px;
@@ -214,7 +214,7 @@ const NavUl = styled.ul`
         list-style: none;
         font-size: 4vh;
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
         display: flex;
         font-family: SVN-Gilroy;
         color: ${secondaryColor};
@@ -287,7 +287,7 @@ const NavA = styled.p`
             color: ${primaryColor};
         }
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
         text-decoration: none;
         color: ${secondaryColor};
         opacity: 0;
@@ -371,7 +371,7 @@ const NavBurgerMobile = styled.div`
             transition: all .5s ease
         }
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
         position: absolute;
         min-width: 100px;
         max-width: 100px;

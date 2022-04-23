@@ -24,7 +24,7 @@ const MainDiv = styled.div`
       align-items: stretch;
       justify-content: flex-start
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
       position: absolute;
       min-width: 90vw; 
       max-width: 90vw;
@@ -112,7 +112,7 @@ const WorkChoice = styled.div`
       min-height: 70vh;
       max-height: 70vh;
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
       overflow: hidden;
       overflow-y: auto;
       min-width: 90vw;
@@ -216,7 +216,7 @@ const Choice = styled.div`
   @media only screen and (max-width: 576px) {
       opacity: 1;
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
       opacity: 1;
       font-size: 5vw;
   }
@@ -229,7 +229,7 @@ const MainPreviewDiv = styled.div`
   @media only screen and (max-width: 576px) {
       display: none;
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     display: none;
   }
   @media only screen and (min-width: 992px) {
@@ -333,7 +333,7 @@ const MainPreviewDivMobile = styled.div`
         visibility: hidden;
       }
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
       position: fixed;
       min-width: 100vw;
       max-width: 100vw;
@@ -389,7 +389,7 @@ const ProjectTypeMobile = styled.div`
   align-items: center;
   text-align: left;
   margin: 1vh 0;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     font-size: 3vh;
   }
 `
@@ -402,7 +402,7 @@ const ProjectFullstackMobile = styled.div`
   align-items: center;
   text-align: left;
   margin: 1vh 0;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     font-size: 3vh;
   }
 `
@@ -416,7 +416,7 @@ const ProjectNameMobile = styled.div`
   align-items: center;
   text-align: left;
   margin: 1.5vh 0;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     font-size: 9vh;
   }
 ` 
@@ -430,7 +430,7 @@ const ProjectLinkMobile = styled.a`
   text-align: left;
   margin: 1vh 0;
   text-decoration: underline;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     font-size: 3vh;
   }
 `
@@ -443,7 +443,7 @@ const ProjectTextMobile = styled.div`
   align-items: center;
   text-align: left;
   margin: 1.5vh 0;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     font-size: 3vh;
   }
 `
@@ -468,7 +468,7 @@ const ProjectCloseButton = styled.div`
   color: ${primaryColor};
   font-weight: 600;
   border-radius: 10px;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     font-size: 3vh;
   }
 `
