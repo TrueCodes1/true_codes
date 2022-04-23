@@ -14,7 +14,13 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.get('*', (req, res) => {
+    /*
     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+    */
+   
+    const index = path.join(__dirname, 'build', 'index.html');
+    res.sendFile(index);
+    
 });
 
 const port = process.env.PORT || 5000;
