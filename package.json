@@ -20,7 +20,8 @@
     "server": "cd server && node app.js",
     "client": "cd client && npm run build",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "git-update": "git add . && git commit -m updated && git push origin master"
+    "git-update": "git add . && git commit -m updated && git push origin master",
+    "heroku-update": "git add . && git commit -m 'updated' && git push heroku master"
   },
   "repository": {
     "type": "git",
