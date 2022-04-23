@@ -25,7 +25,17 @@ const MainDiv = styled.div`
       justify-content: flex-start
   }
   @media only screen and (min-width: 768px) {
-
+      position: absolute;
+      min-width: 90vw; 
+      max-width: 90vw;
+      min-height: 70vh;
+      max-height: 70vh;
+      top: 15vh;
+      left: 5vw;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
   }
   @media only screen and (min-width: 992px) {
       position: absolute;
@@ -103,7 +113,12 @@ const WorkChoice = styled.div`
       max-height: 70vh;
   }
   @media only screen and (min-width: 768px) {
-
+      overflow: hidden;
+      overflow-y: auto;
+      min-width: 90vw;
+      max-width: 90vw;
+      min-height: 70vh;
+      max-height: 70vh;
   }
   @media only screen and (min-width: 992px) {
     min-height: 70vh;
@@ -202,7 +217,8 @@ const Choice = styled.div`
       opacity: 1;
   }
   @media only screen and (min-width: 768px) {
-
+      opacity: 1;
+      font-size: 5vw;
   }
   @media only screen and (min-width: 992px) {
 
@@ -214,7 +230,7 @@ const MainPreviewDiv = styled.div`
       display: none;
   }
   @media only screen and (min-width: 768px) {
-
+    display: none;
   }
   @media only screen and (min-width: 992px) {
     min-width: 60%;
@@ -280,7 +296,6 @@ const MainPreviewDivMobile = styled.div`
       max-width: 100vw;
       min-height: 70vh;
       max-height: 70vh;
-      padding-bottom: 20px;
       bottom: 0;
       left: 0;
       background: ${primaryColor};
@@ -319,7 +334,47 @@ const MainPreviewDivMobile = styled.div`
       }
   }
   @media only screen and (min-width: 768px) {
-
+      position: fixed;
+      min-width: 100vw;
+      max-width: 100vw;
+      min-height: 70vh;
+      max-height: 70vh;
+      bottom: 0;
+      left: 0;
+      background: ${primaryColor};
+      border-radius: 10vw 10vw 0 0;
+      box-shadow: 20px 20px 40px rgba(11, 16, 20, 0.351),
+                  -20px -20px 40px rgba(11, 16, 20, 0.351),
+                  inset -10px 10px 20px rgba(37, 53, 68, 0.121),
+                  inset 10px 10px 20px rgba(37, 53, 68, 0.121);
+      font-family: SVN-Gilroy;
+      color: ${secondaryColor};
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justif-content: flex-start;
+      padding: 60px;
+      padding-top: calc(60px - 1vh);
+      overflow: hidden;
+      overflow-y: auto;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(70vh);
+      padding-bottom: 60px;
+      &.enter {
+        animation: 1 .5s ${MainPreviewDivMobileComeIn};
+        -webkit-animation: 1 .5s ${MainPreviewDivMobileComeIn};
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      &.leave {
+        animation: 1 .5s ${MainPreviewDivMobileLeave};
+        -webkit-animation: 1 .5s ${MainPreviewDivMobileLeave};
+        transform: translateY(70vh);
+        opacity: 0; 
+        visibility: hidden;
+      }
   }
   @media only screen and (min-width: 992px) {
     display: none;
@@ -334,6 +389,9 @@ const ProjectTypeMobile = styled.div`
   align-items: center;
   text-align: left;
   margin: 1vh 0;
+  @media only screen and (min-width: 768px) {
+    font-size: 3vh;
+  }
 `
 
 const ProjectFullstackMobile = styled.div`
@@ -344,6 +402,9 @@ const ProjectFullstackMobile = styled.div`
   align-items: center;
   text-align: left;
   margin: 1vh 0;
+  @media only screen and (min-width: 768px) {
+    font-size: 3vh;
+  }
 `
 
 const ProjectNameMobile = styled.div`
@@ -355,6 +416,9 @@ const ProjectNameMobile = styled.div`
   align-items: center;
   text-align: left;
   margin: 1.5vh 0;
+  @media only screen and (min-width: 768px) {
+    font-size: 9vh;
+  }
 ` 
 
 const ProjectLinkMobile = styled.a`
@@ -366,6 +430,9 @@ const ProjectLinkMobile = styled.a`
   text-align: left;
   margin: 1vh 0;
   text-decoration: underline;
+  @media only screen and (min-width: 768px) {
+    font-size: 3vh;
+  }
 `
 
 const ProjectTextMobile = styled.div`
@@ -376,6 +443,9 @@ const ProjectTextMobile = styled.div`
   align-items: center;
   text-align: left;
   margin: 1.5vh 0;
+  @media only screen and (min-width: 768px) {
+    font-size: 3vh;
+  }
 `
 
 const ProjectCloseButton = styled.div`
@@ -398,6 +468,9 @@ const ProjectCloseButton = styled.div`
   color: ${primaryColor};
   font-weight: 600;
   border-radius: 10px;
+  @media only screen and (min-width: 768px) {
+    font-size: 3vh;
+  }
 `
 
 const ScrollableSmall = styled.div`

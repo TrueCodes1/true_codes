@@ -24,7 +24,17 @@ const Form = styled.form`
     justify-content: space-evenly;
   }
   @media only screen and (min-width: 768px) {
-
+    position: absolute;
+    min-width: 80vw;
+    max-width: 80vw;
+    min-height: 60vh;
+    max-height: 60vh;
+    left: 5vw;
+    top: 15vh;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
   }
   @media only screen and (min-width: 992px) {
     position: absolute;
@@ -116,7 +126,36 @@ const Input = styled.input`
     }
   }
   @media only screen and (min-width: 768px) {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 5px 0;
+    font-size: 25px;
+    font-family: SVN-Gilroy;
+    font-weight: 500;
+    border-radius: 10px;
+    background: #e0e0e0;
+    outline: none;
+    border: none;
+    padding: .75em;/*
+    WebkitBorderRadius: 15px;*/
+    border-radius: 10px;
+    background: ${primaryColor};/*
+    WebkitBoxShadow: 5px 5px 20px #0e141a, -5px -5px 20px #18222c;*/
+    box-shadow:  10px 10px 20px #0d1318,
+                -10px -10px 20px #19232e;
+    color: ${secondaryColor};
 
+    &::placeholder{
+      font-weight: 500;
+    }
+
+    &.come{
+      animation: 1 1.5s ${AppearInput}
+    }
+    
+    &.leave{
+      animation: 1 1.5s ${LeaveInput}
+    }
   }
   @media only screen and (min-width: 992px) {
     min-width: 50%;
@@ -220,7 +259,36 @@ const Textarea = styled.textarea`
     }
   }
   @media only screen and (min-width: 768px) {
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 150px;
+    max-height: 250px;
+    margin: 5px 0;
+    font-size: 25px;
+    border-radius: 15px;
+    background: #e0e0e0;
+    outline: none;
+    border: none;
+    padding: .75em;/*
+    WebkitBorderRadius: 15px;*/
+    border-radius: 10px;
+    background: ${primaryColor};/*
+    WebkitBoxShadow: 5px 5px 20px #0e141a, -5px -5px 20px #18222c;*/
+    box-shadow:  10px 10px 20px #0d1318,
+                -10px -10px 20px #19232e;
+    color: ${secondaryColor};
+    font-family: 'SVN-Gilroy';
+    resize: none;
+    scrollbar-width: none;
+    color: ${secondaryColor};
 
+    &.come{
+      animation: 1 1.5s ${AppearInput}
+    }
+    
+    &.leave{
+      animation: 1 1.5s ${LeaveTextarea}
+    }
   }
   @media only screen and (min-width: 992px) {
     min-width: 50%;
@@ -277,6 +345,75 @@ const LeaveButton = keyframes`
 `
 
 const Button = styled.div`
+  @media only screen and (max-width: 576px) {
+    min-width: fit-content;
+    max-width: fit-content;
+    font-family: SVN-Gilroy;
+    font-size: 20px;
+    font-weight: 300;
+    padding: .75em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${primaryColor};
+    background: ${secondaryColor};
+    border-radius: 10px;
+    opacity: 1;
+    transition: all .25s ease;
+    margin-left: 10px; 
+    box-shadow:  10px 10px 20px #0d1318,
+                -10px -10px 20px #19232e;
+    cursor: pointer;
+
+    &:hover{
+      padding: .75em 0 .75em 40px;
+      opacity: 1;
+      transition: all .25s ease;
+    }
+
+    &.come{
+      animation: 1 .35s ${AppearButton}
+    }
+
+    &.leave{
+      animation: 1 .35s ${LeaveButton}
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    min-width: fit-content;
+    max-width: fit-content;
+    font-family: SVN-Gilroy;
+    font-size: 25px;
+    font-weight: 300;
+    padding: .75em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${primaryColor};
+    background: ${secondaryColor};
+    border-radius: 10px;
+    opacity: 1;
+    transition: all .25s ease;
+    margin-left: 10px; 
+    box-shadow:  10px 10px 20px #0d1318,
+                -10px -10px 20px #19232e;
+    cursor: pointer;
+
+    &:hover{
+      padding: .75em 0 .75em 40px;
+      opacity: 1;
+      transition: all .25s ease;
+    }
+
+    &.come{
+      animation: 1 .35s ${AppearButton}
+    }
+
+    &.leave{
+      animation: 1 .35s ${LeaveButton}
+    }
+  }
+  @media only screen and (min-width: 992px) {
     min-width: 50%;
     max-width: 50%;
     font-size: 20px;
@@ -302,6 +439,7 @@ const Button = styled.div`
     &.leave{
       animation: 1 .35s ${LeaveButton}
     }
+  }
 `
 
 export default () => {

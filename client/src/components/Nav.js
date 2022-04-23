@@ -23,9 +23,11 @@ const EntranceMobileNav = keyframes`
 
 const LeavingMobileNav = keyframes`
     0% {
+        transform: translateY(0);
         opacity: 1;
     }
     100% {
+        transform: translateY(-20px);
         opacity: 0;
     }
 `
@@ -48,8 +50,8 @@ const NavMain = styled.div`
         background: ${primaryColor};
         z-index: 99999;
         &.enter {
-            animation: 1 .35s ${EntranceMobileNav};
-            -webkit-animation: 1 .35s ${EntranceMobileNav}
+            animation: 1 .15s ${EntranceMobileNav};
+            -webkit-animation: 1 .15s ${EntranceMobileNav}
         }
         &.leave {
             animation: 1 .35s ${LeavingMobileNav};
@@ -57,7 +59,29 @@ const NavMain = styled.div`
         }
     }
     @media only screen and (min-width: 768px) {
-
+        position: fixed;
+        min-width: 100vw;
+        max-width: 100vw;
+        min-height: 100vh;
+        max-height: 100vh;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        display: flex;
+        visibility: hidden;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        background: ${primaryColor};
+        z-index: 99999;
+        &.enter {
+            animation: 1 .15s ${EntranceMobileNav};
+            -webkit-animation: 1 .15s ${EntranceMobileNav}
+        }
+        &.leave {
+            animation: 1 .35s ${LeavingMobileNav};
+            -webkit-animation: 1 .35s ${LeavingMobileNav};
+        }
     }
     @media only screen and (min-width: 992px) {
         color: ${secondaryColor};
@@ -144,7 +168,30 @@ const NavLeaveCrossMobile = styled.div`
         }
     }
     @media only screen and (min-width: 768px) {
-
+        min-width: 120px;
+        max-width: 120px;
+        min-height: 120px;
+        max-height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 40px;
+        left: calc(50vw - 60px);
+        margin: 0 auto;
+        &.enter {
+            animation: 1 2.5s ${LeaveCrossComing};
+            -webkit-animation: 1 2.5s ${LeaveCrossComing};
+        }
+        &.leave{
+            animation: 1 2.5s ${LeaveCrossLeaving};
+            -webkit-animation: 1 2.5s ${LeaveCrossLeaving};
+        }
+        &.after-leave {
+            left: 10px;
+            top: -120px;
+            transform: rotateZ(-540deg)
+        }
     }
     @media only screen and (min-width: 992px) {
         display: none;
@@ -168,7 +215,14 @@ const NavUl = styled.ul`
         font-size: 4vh;
     }
     @media only screen and (min-width: 768px) {
-
+        display: flex;
+        font-family: SVN-Gilroy;
+        color: ${secondaryColor};
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        font-size: 7vh;
     }
     @media only screen and (min-width: 992px) {
         padding: 20px 0;
@@ -234,7 +288,25 @@ const NavA = styled.p`
         }
     }
     @media only screen and (min-width: 768px) {
+        text-decoration: none;
+        color: ${secondaryColor};
+        opacity: 0;
+        margin: 3vh 0;
+        &.float{
+            animation: .75s 1 ${FloatIn};
+        }
 
+        &.bubble {
+            animation: infinite 3s ${Bubble}
+        }
+
+        &.dark{
+            color: ${secondaryColor};
+        }
+        
+        &.light{
+            color: ${primaryColor};
+        }
     }
     @media only screen and (min-width: 992px) {
         text-decoration: none;
@@ -300,7 +372,27 @@ const NavBurgerMobile = styled.div`
         }
     }
     @media only screen and (min-width: 768px) {
-
+        position: absolute;
+        min-width: 100px;
+        max-width: 100px;
+        min-height: 100px;
+        max-height: 100px;
+        left: 40px;
+        top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.fall {
+            animation: 1 1.5s ${BurgerLeave};
+            -webkit-animation: 1 1.25s ${BurgerLeave};
+        }
+        &.above {
+            top: -120px;
+        }
+        &.come-back {
+            top: 10px;
+            transition: all .5s ease
+        }
     }
     @media only screen and (min-width: 992px) {
         display: none;
@@ -330,12 +422,12 @@ function Nav(props) {
             let subNameDiv = document.getElementById('sub-name');
             let subSubNameDiv = document.getElementById('sub-sub-name');
 
-            if ($(window).width() < 577) {
+            if ($(window).width() < 993) {
                 $(mainDiv).css('display', 'flex');
                 hideMobileMenu();
                 setTimeout(() => {
                     moving = false
-                }, 2600)
+                }, 350)
             } else {
 
                 nameDiv.style.opacity = '0';
@@ -386,12 +478,12 @@ function Nav(props) {
             let choices = document.getElementById('work-choices');
             let singleChoices = document.getElementsByClassName('choice-work');
 
-            if ($(window).width() < 577) {
+            if ($(window).width() < 993) {
                 $(mainDiv).css('display', 'flex');
                 hideMobileMenu();
                 setTimeout(() => {
                     moving = false
-                }, 2600)
+                }, 350)
             } else {
 
                 mainDiv.style.opacity = '1';
@@ -437,12 +529,12 @@ function Nav(props) {
             let textarea = document.getElementById('contact-textarea');
             let button = document.getElementById('contact-button');
 
-            if ($(window).width() < 577) {
+            if ($(window).width() < 993) {
                 $(form).css('display', 'flex');
                 hideMobileMenu();
                 setTimeout(() => {
                     moving = false
-                }, 2600)
+                }, 350)
             } else {
 
                 form.style.visibility = 'visible';
@@ -485,7 +577,7 @@ function Nav(props) {
             let subNameDiv = document.getElementById('sub-name');
             let subSubNameDiv = document.getElementById('sub-sub-name');
 
-            if ($(window).width() < 577) {
+            if ($(window).width() < 993) {
                 $(mainDiv).css('display', 'none');
                 switch(destination){
                     case 'my work':
@@ -554,7 +646,7 @@ function Nav(props) {
             let choices = document.getElementById('work-choices');
             let singleChoices = document.getElementsByClassName('choice-work');
 
-            if ($(window).width() < 577) {
+            if ($(window).width() < 993) {
                 $('#main-div-work').css('display', 'none');
                 switch(destination){
                     case 'my work':
@@ -618,7 +710,7 @@ function Nav(props) {
             let textarea = document.getElementById('contact-textarea');
             let button = document.getElementById('contact-button');
 
-            if ($(window).width() < 577) {
+            if ($(window).width() < 993) {
                 $(form).css('display', 'none');
                 switch(destination){
                     case 'my work':
@@ -685,7 +777,14 @@ function Nav(props) {
             if (moving != true){
                 moving = true;
                 if (toGo == currentPart){
-                    moving = false;
+                    if ($(window).width() < 993) {
+                        hideMobileMenu()
+                        setTimeout(() => {
+                            moving = false;
+                        }, 350)
+                    } else {
+                        moving = false;
+                    }
                 } else {
                     switch (currentPart) {
                         case 'who I am':
@@ -765,45 +864,46 @@ function Nav(props) {
             
         }
 
-        const hideMobileMenu = () => {
+        const hideMobileMenu = () => {/*
             $('#burger-mobile').css('display', 'flex');
             $('#cross-mobile').addClass('leave');
             setTimeout(() => {
-                $('#cross-mobile').addClass('after-leave');
+                $('#cross-mobile').addClass('after-leave');*/
                 $('#nav-main').addClass('leave');
                 setTimeout(() => {
                     $('#nav-main').removeClass('leave');
                     $('#nav-main').css('opacity', '0');
-                    $('#nav-main').css('visibility', 'hidden');
+                    $('#nav-main').css('visibility', 'hidden');/*
                     $('#burger-mobile').addClass('come-back');
                     $('#burger-mobile').removeClass('above');
                     $('#cross-mobile').removeClass('leave');
                     $('#cross-mobile').removeClass('after-leave');
-                    setTimeout(() => {
-                        $('#nav-main').css('opacity', '1');
+                    setTimeout(() => {*/
+                    $('#nav-main').css('opacity', '1');/*
                         $('#burger-mobile').removeClass('come-back')
-                    }, 500)
-                }, 350)
-            }, 2500)
+                    }, 500)*/
+                }, 350)/*
+            }, 2500)*/
         }
 
         const showMobileMenu = () => {
+            /*
             $('#burger-mobile').addClass('fall');
             $('#burger-mobile').on('animationend', () => {
                 $('#burger-mobile').css('display', 'none');
                 $('#burger-mobile').removeClass('fall');
-                $('#burger-mobile').addClass('above');
+                $('#burger-mobile').addClass('above');*/
                 $('#nav-main').css('visibility', 'visible');
                 $('#nav-main').removeClass('leave');
-                $('#nav-main').addClass('enter');
-                $('#cross-mobile').addClass('enter');
+                $('#nav-main').addClass('enter');/*
+                $('#cross-mobile').addClass('enter');*/
                 setTimeout(() => {
-                    $('#nav-main').removeClass('enter');
-                    $('#cross-mobile').removeClass('enter');
+                    $('#nav-main').removeClass('enter');/*
+                    $('#cross-mobile').removeClass('enter');*/
                     $('#nav-main').css('visibility', 'visible');
                     $('#cross-mobile').on('click', hideMobileMenu);
-                }, 2600)
-            })
+                }, 150)/*
+            })*/
         }
 
         $('#burger-mobile').on('click', showMobileMenu);

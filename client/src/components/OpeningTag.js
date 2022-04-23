@@ -37,7 +37,7 @@ const OpeningTag = styled.div`
     justify-content: center;
     color: ${secondaryColor};/*
     animation: 3s infinite ${Rotating};*/
-    opacity: 0
+    opacity: 0;
 `
 
 const Typing = keyframes`

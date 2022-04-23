@@ -27,7 +27,21 @@ const Ul = styled.ul`
         backdrop-filter: blur(15px);
     }
     @media only screen and (min-width: 768px) {
-
+        position: fixed;
+        width: fit-content;
+        min-width: 110vw;
+        left: -5vw;
+        right: 0;
+        margin: 0 auto;
+        bottom: 5vw;
+        display: flex;
+        flex-direction: row;
+        alig-items: center;
+        justify-content: space-evenly;
+        padding: 30px 20px;
+        border-radius: 10px;
+        background: linear-gradient(90deg, rgb(233, 241, 247, 0.1) 0%, rgba(19, 27, 35, 0.1) 60%);
+        backdrop-filter: blur(15px);
     }
     @media only screen and (min-width: 992px) {
         padding: 0;
@@ -81,7 +95,15 @@ const Li = styled.li`
         }
     }
     @media only screen and (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
 
+        &.float{
+            animation: .75s 1 ${GmailFloatIn};
+            opacity: 1
+        }
     }
     @media only screen and (min-width: 992px) {
         display: flex;
@@ -100,10 +122,27 @@ const LiGmail = styled.li`
     align-items: center;
     justify-content: center;
     transform: translateY(5px);
+    min-width: 80px;
+    max-width: 80px;
+    min-height: 80px;
+    max-height: 80px;
     
     &.float{
         animation: .75s 1 ${GmailFloatIn};
         opacity: 1
+    }
+`
+
+const SocialLogo = styled.img`
+    @media only screen and (max-width: 576px) {
+    }
+    @media only screen and (min-width: 768px) {
+        min-width: 80px;
+        max-width: 80px;
+        min-height: 80px;
+        max-height: 80px;
+    }
+    @media only screen and (min-width: 992px) {
     }
 `
 
@@ -164,17 +203,17 @@ export default () => {
             <Ul className='ul'>
                 <Li className='socials-li' id='social-li-1'>
                     <a href='https://sk.linkedin.com/in/norbert-sviatko-747099230' target='_blank'>
-                        <img src={Linkedin_50x50}/>
+                        <SocialLogo src={Linkedin_50x50}/>
                     </a>
                 </Li>
                 <Li className='socials-li' id='social-li-2'>
                     <a href='https://github.com/TrueCodes1' target='_blank'>
-                        <img src={Github_50x50} />
+                        <SocialLogo src={Github_50x50} />
                     </a>
                 </Li>
                 <Li className='socials-li' id='social-li-3'>
                     <a href='https://www.instagram.com/norbert_sviatko/' target='_blank'>
-                        <img src={Instagram_50x50} />
+                        <SocialLogo src={Instagram_50x50} />
                     </a>
                 </Li>
             </Ul>

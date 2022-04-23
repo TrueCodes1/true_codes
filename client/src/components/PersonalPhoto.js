@@ -34,7 +34,14 @@ const PersonalPhotoDiv = styled.div`
         left: 0;
     }
     @media only screen and (min-width: 768px) {
-
+        position: fixed;
+        min-width: 100vw;
+        max-width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        left: 0;
     }
     @media only screen and (min-width: 992px) {
         position: fixed;
@@ -64,7 +71,12 @@ const PersonalPhotoImg = styled.img`
         opacity: .5;
     }
     @media only screen and (min-width: 768px) {
-
+        position: fixed;
+        min-height: 90vw;
+        max-height: 90vw;
+        right: 0;
+        bottom: 0;
+        opacity: .5;
     }
     @media only screen and (min-width: 992px) {
         position: absolute;

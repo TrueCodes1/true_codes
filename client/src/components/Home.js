@@ -80,7 +80,21 @@ const SideMainDiv = styled.div`
         transform: translateY(-30px)   
     }
     @media only screen and (min-width: 768px) {
-
+        position: absolute;
+        min-width: 95vw;
+        max-width: 95vw;
+        left: 30px;
+        font-family: SVN-Gilroy;
+        min-height: 300px;
+        max-height: 300px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center; 
+        transform: translateY(-30px)   
     }
     @media only screen and (min-width: 992px) {
         position: absolute;
@@ -179,7 +193,13 @@ const NameDiv = styled.div`
         text-align: left;
     }
     @media only screen and (min-width: 768px) {
-
+        font-size: 10vw;
+        font-weight: 600;
+        line-height: 1.1em;
+        color: ${secondaryColor};
+        min-width: 100%;
+        max-width: 100%;
+        text-align: left;
     }
     @media only screen and (min-width: 992px) {
         min-width: 100%;
@@ -222,10 +242,18 @@ const SubDiv = styled.div`
         max-width: 100%;
         text-align: left;
         margin-top: 10px;
+        margin-bottom: 20px;
         line-height: 1.15em;
     }
     @media only screen and (min-width: 768px) {
-
+        font-size: 6vw;
+        color: ${secondaryColor};
+        min-width: 100%;
+        max-width: 100%;
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        line-height: 1.15em;
     }
     @media only screen and (min-width: 992px) {
         display: flex;
@@ -270,7 +298,14 @@ const SubSubDiv = styled.div`
         max-width: 78vw;
     }
     @media only screen and (min-width: 768px) {
-
+        font-size: 3.5vw;
+        color: ${secondaryColor};
+        min-width: 100%;
+        max-width: 100%;
+        text-align: left;
+        margin-top: 20px;
+        min-width: 78vw;
+        max-width: 78vw;
     }
     @media only screen and (min-width: 992px) {
         min-width: 400px;
