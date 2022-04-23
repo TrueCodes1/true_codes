@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "concurrently": "7.1.0",
+    "jquery": "^3.6.0",
     "node": "^17.7.2",
     "path": "^0.12.7",
     "react-dom": "^18.0.0",
