@@ -23,7 +23,7 @@ const Form = styled.form`
     align-items: flex-start;
     justify-content: space-evenly;
   }
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
+  @media only screen and (min-width: 576px) and (max-width: 991px) {
     position: absolute;
     min-width: 80vw;
     max-width: 80vw;
@@ -125,7 +125,7 @@ const Input = styled.input`
       animation: 1 1.5s ${LeaveInput}
     }
   }
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
+  @media only screen and (min-width: 576px) and (max-width: 991px) {
     min-width: 100%;
     max-width: 100%;
     margin: 5px 0;
@@ -258,7 +258,7 @@ const Textarea = styled.textarea`
       animation: 1 1.5s ${LeaveTextarea}
     }
   }
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
+  @media only screen and (min-width: 576px) and (max-width: 991px) {
     min-width: 80%;
     max-width: 80%;
     min-height: 150px;
@@ -379,7 +379,7 @@ const Button = styled.div`
       animation: 1 .35s ${LeaveButton}
     }
   }
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
+  @media only screen and (min-width: 576px) and (max-width: 991px) {
     min-width: fit-content;
     max-width: fit-content;
     font-family: SVN-Gilroy;

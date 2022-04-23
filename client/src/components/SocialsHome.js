@@ -26,7 +26,7 @@ const Ul = styled.ul`
         background: linear-gradient(90deg, rgb(233, 241, 247, 0.1) 0%, rgba(19, 27, 35, 0.1) 60%);
         backdrop-filter: blur(15px);
     }
-    @media only screen and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         position: fixed;
         width: fit-content;
         min-width: 110vw;
@@ -94,7 +94,7 @@ const Li = styled.li`
             opacity: 1
         }
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -136,7 +136,7 @@ const LiGmail = styled.li`
 const SocialLogo = styled.img`
     @media only screen and (max-width: 576px) {
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         min-width: 80px;
         max-width: 80px;
         min-height: 80px;

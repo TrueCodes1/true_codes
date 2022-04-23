@@ -58,7 +58,7 @@ const NavMain = styled.div`
             -webkit-animation: 1 .35s ${LeavingMobileNav};
         }
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         position: fixed;
         min-width: 100vw;
         max-width: 100vw;
@@ -142,10 +142,10 @@ const LeaveCrossLeaving = keyframes`
 
 const NavLeaveCrossMobile = styled.div`
     @media only screen and (max-width: 576px) {
-        min-width: 60px;
-        max-width: 60px;
-        min-height: 60px;
-        max-height: 60px;
+        min-width: 15vw;
+        max-width: 15vw;
+        min-height: 15vw;
+        max-height: 15vw;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -167,11 +167,11 @@ const NavLeaveCrossMobile = styled.div`
             transform: rotateZ(-540deg)
         }
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
-        min-width: 120px;
-        max-width: 120px;
-        min-height: 120px;
-        max-height: 120px;
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
+        min-width: 14vw;
+        max-width: 14vw;
+        min-height: 14vw;
+        max-height: 14vw;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -214,7 +214,7 @@ const NavUl = styled.ul`
         list-style: none;
         font-size: 4vh;
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         display: flex;
         font-family: SVN-Gilroy;
         color: ${secondaryColor};
@@ -287,7 +287,7 @@ const NavA = styled.p`
             color: ${primaryColor};
         }
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         text-decoration: none;
         color: ${secondaryColor};
         opacity: 0;
@@ -371,7 +371,7 @@ const NavBurgerMobile = styled.div`
             transition: all .5s ease
         }
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         position: absolute;
         min-width: 100px;
         max-width: 100px;

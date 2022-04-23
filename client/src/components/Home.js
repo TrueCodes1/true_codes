@@ -14,7 +14,7 @@ const secondaryColor = '#e9f1f7';
 const MainDiv = styled.div`
     @media only screen and (max-width: 576px) {
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
 
     }
     @media only screen and (min-width: 992px) {
@@ -79,7 +79,7 @@ const SideMainDiv = styled.div`
         justify-content: center; 
         transform: translateY(-30px)   
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         position: absolute;
         min-width: 95vw;
         max-width: 95vw;
@@ -192,7 +192,7 @@ const NameDiv = styled.div`
         max-width: 100%;
         text-align: left;
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         font-size: 10vw;
         font-weight: 600;
         line-height: 1.1em;
@@ -245,7 +245,7 @@ const SubDiv = styled.div`
         margin-bottom: 20px;
         line-height: 1.15em;
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         font-size: 6vw;
         color: ${secondaryColor};
         min-width: 100%;
@@ -297,7 +297,7 @@ const SubSubDiv = styled.div`
         min-width: 78vw;
         max-width: 78vw;
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         font-size: 3.5vw;
         color: ${secondaryColor};
         min-width: 100%;

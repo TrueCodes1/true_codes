@@ -33,7 +33,7 @@ const PersonalPhotoDiv = styled.div`
         bottom: 0;
         left: 0;
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         position: fixed;
         min-width: 100vw;
         max-width: 100vw;
@@ -70,7 +70,7 @@ const PersonalPhotoImg = styled.img`
         bottom: 0;
         opacity: .5;
     }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         position: fixed;
         min-height: 90vw;
         max-height: 90vw;
