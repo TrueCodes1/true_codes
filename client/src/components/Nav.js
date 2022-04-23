@@ -278,10 +278,10 @@ const BurgerLeave = keyframes`
 const NavBurgerMobile = styled.div`
     @media only screen and (max-width: 576px) {
         position: absolute;
-        min-width: 60px;
-        max-width: 60px;
-        min-height: 60px;
-        max-height: 60px;
+        min-width: 50px;
+        max-width: 50px;
+        min-height: 50px;
+        max-height: 50px;
         left: 20px;
         top: 10px;
         display: flex;

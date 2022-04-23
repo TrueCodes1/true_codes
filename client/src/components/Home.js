@@ -62,44 +62,44 @@ const Leave = keyframes`
 `
 
 const SideMainDiv = styled.div`
-@media only screen and (max-width: 576px) {
-    position: absolute;
-    min-width: 95vw;
-    max-width: 95vw;
-    left: 15px;
-    font-family: SVN-Gilroy;
-    min-height: 300px;
-    max-height: 300px;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center; 
-    transform: translateY(-30px)   
-}
-@media only screen and (min-width: 768px) {
-
-}
-@media only screen and (min-width: 992px) {
-    position: absolute;
-    min-width: 500px;
-    max-width: 1000px;
-    left: 200px;
-    top: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    font-family: SVN-Gilroy;
-    padding: 30px;
-    border-radius: 30px;
-
-    &.leave{
-        animation: .35s 1 ${Leave}
+    @media only screen and (max-width: 576px) {
+        position: absolute;
+        min-width: 95vw;
+        max-width: 95vw;
+        left: 15px;
+        font-family: SVN-Gilroy;
+        min-height: 300px;
+        max-height: 300px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center; 
+        transform: translateY(-30px)   
     }
-}
+    @media only screen and (min-width: 768px) {
+
+    }
+    @media only screen and (min-width: 992px) {
+        position: absolute;
+        min-width: 500px;
+        max-width: 1000px;
+        left: 200px;
+        top: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        font-family: SVN-Gilroy;
+        padding: 30px;
+        border-radius: 30px;
+
+        &.leave{
+            animation: .35s 1 ${Leave}
+        }
+    }
 `
 
 const Float = keyframes`
@@ -169,136 +169,140 @@ const FloatSubSubOut = keyframes`
 `
 
 const NameDiv = styled.div`
-@media only screen and (max-width: 576px) {
-    font-size: 12vw;
-    color: ${secondaryColor};
-    min-width: 100%;
-    max-width: 100%;
-    text-align: left;
-}
-@media only screen and (min-width: 768px) {
-
-}
-@media only screen and (min-width: 992px) {
-    min-width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    color: ${secondaryColor};
-    font-size: 10vh;
-    padding: 0 0 10px 0;
-    opacity: 0;
-
-    &.float {
-        animation: .75s 1 ${Float}
-    }
-
-    &.float-out {
-        animation .75s 1 ${FloatOut}
-    }
-    
-    &.dark{
+    @media only screen and (max-width: 576px) {
+        font-size: 12.5vw;
+        font-weight: 600;
+        line-height: 1.1em;
         color: ${secondaryColor};
-        transition: all .25s ease
+        min-width: 100%;
+        max-width: 100%;
+        text-align: left;
     }
-    
-    &.light{
-        color: ${primaryColor};
-        transition: all .25s ease
+    @media only screen and (min-width: 768px) {
+
     }
-}
+    @media only screen and (min-width: 992px) {
+        min-width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        color: ${secondaryColor};
+        font-size: 10vh;
+        font-weight: 600;
+        padding: 0 0 10px 0;
+        opacity: 0;
+
+        &.float {
+            animation: .75s 1 ${Float}
+        }
+
+        &.float-out {
+            animation .75s 1 ${FloatOut}
+        }
+        
+        &.dark{
+            color: ${secondaryColor};
+            transition: all .25s ease
+        }
+        
+        &.light{
+            color: ${primaryColor};
+            transition: all .25s ease
+        }
+    }
 `
 
 const SubDiv = styled.div`
-@media only screen and (max-width: 576px) {
-    font-size: 3vh;
-    color: ${secondaryColor};
-    min-width: 100%;
-    max-width: 100%;
-    text-align: left;
-    margin-top: 10px;
-}
-@media only screen and (min-width: 768px) {
-
-}
-@media only screen and (min-width: 992px) {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    color: ${secondaryColor};
-    font-size: 5vh;
-    opacity: .5;
-    padding: 0 0 10px 0;
-    opacity: 0;
-    
-    &.float {
-        animation: .75s 1 ${FloatSub}
-    }
-    
-    &.float-out {
-        animation .75s 1 ${FloatSubOut}
-    }
-    
-    &.dark{
+    @media only screen and (max-width: 576px) {
+        font-size: 7.5vw;
         color: ${secondaryColor};
-        transition: all .25s ease
+        min-width: 100%;
+        max-width: 100%;
+        text-align: left;
+        margin-top: 10px;
+        line-height: 1.15em;
     }
-    
-    &.light{
-        color: ${primaryColor};
-        transition: all .25s ease
+    @media only screen and (min-width: 768px) {
+
     }
-}
+    @media only screen and (min-width: 992px) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        color: ${secondaryColor};
+        font-size: 5vh;
+        opacity: .5;
+        padding: 0 0 10px 0;
+        opacity: 0;
+        
+        &.float {
+            animation: .75s 1 ${FloatSub}
+        }
+        
+        &.float-out {
+            animation .75s 1 ${FloatSubOut}
+        }
+        
+        &.dark{
+            color: ${secondaryColor};
+            transition: all .25s ease
+        }
+        
+        &.light{
+            color: ${primaryColor};
+            transition: all .25s ease
+        }
+    }
 `
 
 const SubSubDiv = styled.div`
-@media only screen and (max-width: 576px) {
-    font-size: 1.75vh;
-    color: ${secondaryColor};
-    min-width: 100%;
-    max-width: 100%;
-    text-align: left;
-    margin-top: 20px;
-    min-width: 70vw;
-    max-width: 70vw
-}
-@media only screen and (min-width: 768px) {
-
-}
-@media only screen and (min-width: 992px) {
-    min-width: 400px;
-    max-width: 400px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    color: ${secondaryColor};
-    font-size: 2.5vh;
-    opacity: .75;
-    padding: 10px 0;
-    opacity: 0;
-    
-    &.float {
-        animation: .75s 1 ${FloatSubSub}
-    }
-    
-    &.float-out {
-        animation .75s 1 ${FloatSubSubOut}
-    }
-
-    &.dark{
+    @media only screen and (max-width: 576px) {
+        font-size: 2.1vh;
         color: ${secondaryColor};
-        transition: all .25s ease
+        min-width: 100%;
+        max-width: 100%;
+        text-align: left;
+        margin-top: 20px;
+        min-width: 78vw;
+        max-width: 78vw;
     }
-    
-    &.light{
-        color: ${primaryColor};
-        transition: all .25s ease
+    @media only screen and (min-width: 768px) {
+
     }
-}
+    @media only screen and (min-width: 992px) {
+        min-width: 400px;
+        max-width: 400px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        color: ${secondaryColor};
+        font-size: 2.5vh;
+        opacity: .75;
+        padding: 10px 0;
+        opacity: 0;
+        
+        &.float {
+            animation: .75s 1 ${FloatSubSub}
+        }
+        
+        &.float-out {
+            animation .75s 1 ${FloatSubSubOut}
+        }
+
+        &.dark{
+            color: ${secondaryColor};
+            transition: all .25s ease
+        }
+        
+        &.light{
+            color: ${primaryColor};
+            transition: all .25s ease
+        }
+    }
 `
 
 export default (props) => {
@@ -312,8 +316,8 @@ export default (props) => {
 
         if (sessionStorage.getItem('init-anim')!==null && sessionStorage.getItem('init-anim')!==undefined){
             nameDiv.style.opacity = '1';
-            subNameDiv.style.opacity = '.5';
-            subSubNameDiv.style.opacity = '.75';
+            subNameDiv.style.opacity = '1';
+            subSubNameDiv.style.opacity = '.5';
         } else {
 
             sessionStorage.setItem('init-anim', '1');

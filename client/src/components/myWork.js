@@ -19,7 +19,7 @@ const MainDiv = styled.div`
       max-height: 70vh;
       top: 10vh;
       left: 5vw;
-      display: flex;
+      display: none;
       flex-direction: column;
       align-items: stretch;
       justify-content: flex-start
