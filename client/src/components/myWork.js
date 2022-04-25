@@ -787,9 +787,11 @@ export default (props) => {
         $('#project-text-mobile').html(project.text);
         $('#main-preview-mobile').removeClass('leave');
         $('#main-preview-mobile').addClass('enter');
-        setTimeout(() => {
-          $('#close-project-mobile').css('display', 'flex');
-        }, 400)
+        if ($(window).width() > 991){
+          setTimeout(() => {
+            $('#close-project-mobile').css('display', 'flex');
+          }, 400)
+        }
       })
     }
 
