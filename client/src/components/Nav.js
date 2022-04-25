@@ -39,7 +39,7 @@ const NavMain = styled.div`
         max-width: 100vw;
         min-height: 100vh;
         max-height: 100vh;
-        top: 0;
+        bottom: 0;
         left: 0;
         box-sizing: border-box;
         display: flex;
@@ -64,7 +64,7 @@ const NavMain = styled.div`
         max-width: 100vw;
         min-height: 100vh;
         max-height: 100vh;
-        top: 0;
+        bottom: 0;
         left: 0;
         box-sizing: border-box;
         display: flex;

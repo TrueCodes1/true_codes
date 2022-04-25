@@ -471,6 +471,9 @@ const ProjectCloseButton = styled.div`
   @media only screen and (min-width: 576px) and (max-width: 991px) {
     font-size: 3vh;
   }
+  @media only screen and (min-width: 992px) {
+    display: none;
+  }
 `
 
 const ScrollableSmall = styled.div`
