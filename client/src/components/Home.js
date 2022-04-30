@@ -408,7 +408,7 @@ export default (props) => {
                 </SubDiv>
                 <SubSubDiv id="sub-sub-name" className={props.theme}>
                     Guy passionate about coding, having his laptop always in backpack.
-                    I'm 19 and I've been in game for almost 2 years now, with some both 
+                    I'm 20 and I've been in game for almost 2 years now, with some both 
                     client and personal projects out there!  
                 </SubSubDiv>
             </SideMainDiv>
