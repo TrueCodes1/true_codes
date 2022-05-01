@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import $ from 'jquery';
 
 import './styles/all.css';
 import './styles/animations.css';
 import './styles/fonts.css';
+
+// IMPORTING ALL NECCESSARY FUNCTIONS
+import sendMail from './scripts/functions/sendMail';
 
 const primaryColor = '#131b23';
 const secondaryColor = '#e9f1f7';
@@ -444,11 +447,30 @@ const Button = styled.div`
 `
 
 export default () => {
+
+  useEffect(() => {
+    
+    const grabFormData = () => {
+      
+      let name = $('#name-input').val();
+      let email = $('#email-input').val();
+      let message = $('#contact-textarea').val();
+
+      let formData = [name, email, message]
+
+      sendMail(formData)
+
+    }
+
+    $('#contact-button').on('click', grabFormData)
+
+  })
+
   return (
       <div>
           <Form id='contact-form'>
-            <Input placeholder='Name' className='contact-input'></Input>
-            <Input placeholder='Email' className='contact-input'></Input>
+            <Input placeholder='Name' className='contact-input' id='name-input'></Input>
+            <Input placeholder='Email' className='contact-input' id='email-input'></Input>
             <Textarea placeholder='Message' spellCheck='false' id='contact-textarea'></Textarea>
             <Button id='contact-button'>send</Button>
           </Form>
