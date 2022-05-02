@@ -1,7 +1,7 @@
 
 // IMPORTING ALL NECCESSARY NODE MODULES
 import $ from 'jquery';
-import axios from 'axios';
+const axios = require('axios');
 
 const sendMail = (formData) => {
 
