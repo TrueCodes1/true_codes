@@ -908,7 +908,7 @@ export default (props) => {
           </ScrollableLinkContent>
           
           <ScrollableLinkContent>
-            <LinkStyled className='disabled'>www.meineverben.com</LinkStyled>
+            <LinkStyled href='https://www.meineverben.com' target='_blank' norefferer='true' noopener='true'>www.meineverben.com</LinkStyled>
           </ScrollableLinkContent>
 
         </ScrollableLink>
