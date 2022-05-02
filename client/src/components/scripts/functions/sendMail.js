@@ -1,5 +1,5 @@
 
-// IMPORTING ALL NECCESSARY MODULES
+// IMPORTING ALL NECCESSARY NODE MODULES
 import $ from 'jquery';
 
 const sendMail = (formData) => {
