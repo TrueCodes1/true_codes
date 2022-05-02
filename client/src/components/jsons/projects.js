@@ -33,7 +33,7 @@ const projects = {
         type: 'personal',
         stack: 'full-stack',
         name: 'Meine Verben',
-        link: 'https://germanverbs.herokuapp.com/',
+        link: 'http://www.meineverben.com',
         text: `Simple and easy - to - use platform with the focus on irregular 
             verbs serving for lerners of German. Do not hesitate to add your 
             needed verbs and take a test.  Node.js on the back-end 
