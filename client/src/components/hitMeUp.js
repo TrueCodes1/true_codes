@@ -182,7 +182,7 @@ const Input = styled.input`
     box-shadow: none;
 
     &::placeholder{
-      font-weight: 100;
+      font-weight: 400;
     }
 
     &.come{
