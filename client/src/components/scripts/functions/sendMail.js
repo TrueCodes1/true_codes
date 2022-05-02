@@ -1,7 +1,6 @@
 
 // IMPORTING ALL NECCESSARY NODE MODULES
 import $ from 'jquery';
-const axios = require('axios');
 
 const sendMail = (formData) => {
 
@@ -19,25 +18,6 @@ const sendMail = (formData) => {
     }
 
     if (correct == true) {
-
-        axios.post('http://localhost:5000/contact', {
-            name: formData.name,
-            email: formData.email,
-            message: formData.message
-            //NOT WORKING FROM HERE - 404 NOT FOUND ERROR
-        })
-        .then(
-            res => res.json()
-        )
-        .then(
-            res => {
-                if (res.success) {
-                    alert('sent!;')
-                } else {
-                    alert(`something's going wrong`)
-                }
-            }
-        )
 
     }
     
