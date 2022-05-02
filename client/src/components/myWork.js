@@ -558,6 +558,13 @@ const ScrollableLinkContent = styled.div`
 
 const LinkStyled = styled.a`
   text-decoration: none;
+  border-bottom: 1px solid ${secondaryColor};
+  padding-bottom: 2px;
+  color: ${secondaryColor};
+
+  &.disabled {
+    opacity: .25;
+  }
 
   &.dark{
     color: ${secondaryColor};
@@ -893,15 +900,15 @@ export default (props) => {
           </ScrollableLinkContent>
           
           <ScrollableLinkContent>
-            www.tfstylefc.com
+            <LinkStyled href='https://www.tfstylefc.com' target='_blank' norefferer='true' noopener='true'>www.tfstylefc.com</LinkStyled>
           </ScrollableLinkContent>
 
           <ScrollableLinkContent>
-            www.mojerecepty.sk
+            <LinkStyled className='disabled'>www.mojerecepty.sk</LinkStyled>
           </ScrollableLinkContent>
           
           <ScrollableLinkContent>
-            www.meineverben.com
+            <LinkStyled className='disabled'>www.meineverben.com</LinkStyled>
           </ScrollableLinkContent>
 
         </ScrollableLink>
