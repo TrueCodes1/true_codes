@@ -451,11 +451,11 @@ function Nav(props) {
                 
                 setTimeout(() => {
                     nameDiv.style.opacity = '1';
-                }, 950)
+                }, 850)
                 
                 setTimeout(() => {
                     subNameDiv.style.opacity = '.5';
-                }, 1150)
+                }, 1050)
                 
                 setTimeout(() => {
                     subSubNameDiv.style.opacity = '.75';
@@ -466,7 +466,7 @@ function Nav(props) {
     
                     moving = false
     
-                }, 1350)
+                }, 1250)
 
             }
 
