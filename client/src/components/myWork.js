@@ -768,11 +768,13 @@ export default (props) => {
 
     document.getElementById('main-div-work').addEventListener('mouseleave', scrollNeutral);
 
-    $('#close-project-mobile').on('click', () => {
+    const closeProject = () => {
       $('#main-preview-mobile').removeClass('enter');
       $('#main-preview-mobile').addClass('leave');
       $('#close-project-mobile').css('display', 'none');
-    })
+    }
+
+    $('#close-project-mobile').on('click', closeProject);
 
     for (let choice of [choiceSigred, choiceTFStyle, choiceRecepty, choiceVerben]) {
       $(choice).on('click', () => {
@@ -800,6 +802,28 @@ export default (props) => {
           }, 400)
         }
       })
+    }
+
+    let touchstartX = 0;
+    let touchstartY = 0;
+    let touchendX = 0;
+    let touchendY = 0;
+
+    document.getElementById('main-preview-mobile').addEventListener('touchstart', (event) => {
+      touchstartX = event.changedTouches[0].screenX;
+      touchstartY = event.changedTouches[0].screenY;
+    }, false);
+    
+    document.getElementById('main-preview-mobile').addEventListener('touchend', (event) => {
+      touchendX = event.changedTouches[0].screenX;
+      touchendY = event.changedTouches[0].screenY;
+      handleGesture();
+    }, false); 
+    
+    const handleGesture = () => {
+        if (touchendY > touchstartY) {
+          closeProject()
+        }
     }
 
   })
