@@ -370,9 +370,7 @@ const Button = styled.div`
     cursor: pointer;
 
     &:hover{
-      padding: .75em 0 .75em 40px;
       opacity: 1;
-      transition: all .25s ease;
     }
 
     &.come{
@@ -404,9 +402,7 @@ const Button = styled.div`
     cursor: pointer;
 
     &:hover{
-      padding: .75em 0 .75em 40px;
       opacity: 1;
-      transition: all .25s ease;
     }
 
     &.come{
