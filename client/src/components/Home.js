@@ -220,7 +220,8 @@ const NameDiv = styled.div`
         }
 
         &.float-out {
-            animation .75s 1 ${FloatOut}
+            animation .75s 1 ${FloatOut};
+            opacity: 0
         }
         
         &.dark{

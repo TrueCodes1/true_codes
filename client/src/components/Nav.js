@@ -435,9 +435,9 @@ function Nav(props) {
                 subSubNameDiv.style.opacity = '0';
     
                 mainDiv.style.display = 'flex';
-                mainDiv.style.opacity = '1';
                 
                 setTimeout(() => {
+                    mainDiv.style.opacity = '1';
                     nameDiv.classList.add('float');
                 }, 200)
                 
@@ -609,11 +609,11 @@ function Nav(props) {
                 
                 setTimeout(() => {
                     nameDiv.style.opacity = '0';
-                }, 950)
+                }, 850)
                 
                 setTimeout(() => {
                     subNameDiv.style.opacity = '0';
-                }, 1150)
+                }, 1050)
                 
                 setTimeout(() => {
                     subSubNameDiv.style.opacity = '0';
@@ -635,7 +635,7 @@ function Nav(props) {
                             break
                     }
     
-                }, 1350)
+                }, 1250)
 
             }
 

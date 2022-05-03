@@ -926,10 +926,7 @@ export default (props) => {
           </ScrollableDescriptionContent>
           
           <ScrollableDescriptionContent>
-            Innovative e-commerce platform to sell anything online within 
-            the community of mainly young people. The website runs on 
-            Node.js (Express) with ejs SSR and modern decent-looking 
-            HTML+CSS+JS front-end. We are  switching to React.js in close time!
+            (description coming soon!)
           </ScrollableDescriptionContent>
           
           <ScrollableDescriptionContent>
