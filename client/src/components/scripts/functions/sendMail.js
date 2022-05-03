@@ -3,6 +3,12 @@
 import axios from 'axios';
 import $ from 'jquery';
 
+// DEFINING FUNCTION FOR SLEARING TH FORM
+const clearForm = () => {
+    $('#name-input').val('');
+    $('#email-input').val('');
+    $('#contact-textarea').val('')
+}
 
 // DEFINING FUNCTION FOR FIRST INPUT VALIDATION (CLIENT SIDE) AND POSTING THE MESSAGE AFTERWARDS
 const sendMail = async (formData) => {
@@ -39,14 +45,16 @@ const sendMail = async (formData) => {
         .then(
             res => {
                 if (res.success) {
-                    /*
-                        FINISH
-                    */
+                    alert(`Your message was successfuly sent! I'll respond in few hours. :-)`);
+                    clearForm()
                 } else if (res.error) {
                     if (res.error == 'invalid-email') {
-                        alert('Please, eneter an email address of correct format.')
+                        alert('Please, eneter an email address of correct format. :-)')
                     } else if (res.error == 'an-empty-field') {
                         alert('Please, fill in all the input fields. :-)')
+                    } else if (res.error == 'message-error') {
+                        alert('Something went wrong, we are sorry. :-/ Please, try again a bit later.');
+                        clearForm()
                     }
                 }
             }
