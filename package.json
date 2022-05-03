@@ -5,11 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.27.2",
+    "body": "^5.1.0",
     "concurrently": "7.1.0",
     "cors": "^2.8.5",
     "jquery": "^3.6.0",
     "node": "^17.7.2",
     "nodemailer": "^6.7.4",
+    "parser": "^0.1.4",
     "path": "^0.12.7",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

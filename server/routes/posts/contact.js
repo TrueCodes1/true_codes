@@ -1,5 +1,6 @@
 // IMPORTING ALL NECCESSARY NODE MODULES
 import express from 'express';
+import bodyParser from 'body-parser';
 
 // DEFINING ROUTER
 const ContactRouter = express.Router();
@@ -8,7 +9,7 @@ const ContactRouter = express.Router();
 import contactController from '../../controllers/contact/contact.js';
 
 // ASSIGNING SPECIFIC FUNCTIONS IN CONTROLLERS TO SPECIFIC ROUTES
-ContactRouter.post('/', contactController.processContact)
+ContactRouter.post('/', bodyParser.json(), contactController.processContact)
 
 // EXPORTING ROUTER
 export default { ContactRouter }

@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 
 const app = express();
 
@@ -15,7 +16,8 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.use(cors());
-
+app.use(bodyParser.json());
+app.use(express.json());
 
 app.use('/', MainRouter);
 
