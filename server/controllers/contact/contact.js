@@ -6,7 +6,9 @@ const processContact = async (req, res) => {
 
     res.header("Access-Control-Allow-Origin", "*");
 
-    
+    res.send({
+        'success': true
+    }).end()
 
 }
 

@@ -20,16 +20,24 @@ const sendMail = async (formData) => {
 
     if (correct == true) {
 
-        let url = new URL('http://localhost:5000/contact')
-
         axios({
             method: 'POST',
-            url: url,
+            url: '/contact',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
         })
+        .then(
+            res => res.data
+        )
+        .then(
+            res => {
+                if (res.success) {
+                    alert('Success!')
+                }
+            }
+        )
         .catch((err) => {
             console.log(err)
         })
