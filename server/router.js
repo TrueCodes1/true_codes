@@ -12,7 +12,7 @@ import Contact from './routes/posts/contact.js';
 // *************************************************************************************************
 
 // BOTH '/' AND '/index' ROUTES ARE DIRECTING TO HOMEPAGE
-MainRouter.post('/contact', Contact.ContactRouter);
+MainRouter.use('/contact', Contact.ContactRouter);
 
 // *************************************************************************************************
 // ASSIGNING SPECIFIC ROUTES TO SPECIFIC ROUTERS ENDS HERE *****************************************

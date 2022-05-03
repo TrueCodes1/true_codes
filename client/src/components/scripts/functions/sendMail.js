@@ -1,8 +1,9 @@
 
 // IMPORTING ALL NECCESSARY NODE MODULES
+import axios from 'axios';
 import $ from 'jquery';
 
-const sendMail = (formData) => {
+const sendMail = async (formData) => {
 
     let correct = true;
     let inputsNames = ['name', 'email', 'message'];
@@ -18,6 +19,20 @@ const sendMail = (formData) => {
     }
 
     if (correct == true) {
+
+        let url = new URL('http://localhost:5000/contact')
+
+        axios({
+            method: 'POST',
+            url: url,
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+        .catch((err) => {
+            console.log(err)
+        })
 
     }
     
