@@ -604,6 +604,10 @@ const ScrollableDescriptionContent = styled.div`
 export default (props) => {
 
   useEffect(() => {
+
+    setTimeout( () => {
+        window.scrollTo(0, 1);
+    }, 0);
     
     const choiceSigred = document.getElementById('choice-sigred');
     const choiceTFStyle = document.getElementById('choice-tfstyle');
