@@ -907,6 +907,7 @@ function Nav(props) {
         }
 
         const showMobileMenu = () => {
+            alert('now')
             /*
             $('#burger-mobile').addClass('fall');
             $('#burger-mobile').on('animationend', () => {
