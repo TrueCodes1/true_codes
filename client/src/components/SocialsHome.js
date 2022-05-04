@@ -10,7 +10,10 @@ import Instagram_50x50 from './images/instagram_50x50.svg';
 import Gmail_50x50 from './images/gmail_50x50.svg';
 
 const Ul = styled.ul`
-    @media only screen and (max-width: 576px) {
+    @media only screen and (min-width: 10px) and (max-width: 370px) {
+        display: none;
+    }
+    @media only screen and (min-width: 371px) and (max-width: 576px) {
         position: fixed;
         width: fit-content;
         min-width: 110vw;

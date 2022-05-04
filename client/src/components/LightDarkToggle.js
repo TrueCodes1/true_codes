@@ -12,7 +12,10 @@ var primaryColor = dark;
 var secondaryColor = light;
 
 const MainSwitch = styled.div`
-    @media only screen and (max-width: 576px) {
+    @media only screen and (min-width: 10px) and (max-width: 370px) {
+        display: none;
+    }
+    @media only screen and (min-width: 371px) and (max-width: 576px) {
         position: absolute;
         min-width: 80px;
         max-width: 80px;
@@ -39,7 +42,7 @@ const MainSwitch = styled.div`
             background: ${secondaryColor}
         }
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 576px) and (max-width: 991px) {
         position: absolute;
         min-width: 80px;
         max-width: 80px;

@@ -24,7 +24,10 @@ const Float = keyframes`
 `
 
 const PersonalPhotoDiv = styled.div`
-    @media only screen and (max-width: 576px) {
+    @media only screen and (min-width: 10px) and (max-width: 370px) {
+        display: none;
+    }
+    @media only screen and (min-width: 371px) and (max-width: 576px) {
         position: fixed;
         min-width: 100vw;
         max-width: 100vw;
@@ -63,7 +66,10 @@ const PersonalPhotoDiv = styled.div`
 `
 
 const PersonalPhotoImg = styled.img`
-    @media only screen and (max-width: 576px) {
+    @media only screen and (min-width: 10px) and (max-width: 370px) {
+        display: none;
+    }
+    @media only screen and (min-width: 371px) and (max-width: 576px) {
         position: fixed;
         min-height: 60vh;
         max-height: 60vh;

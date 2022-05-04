@@ -101,7 +101,7 @@ const SideMainDiv = styled.div`
         position: absolute;
         min-width: 500px;
         max-width: 1000px;
-        left: 200px;
+        left: 10vw;
         top: 200px;
         display: flex;
         flex-direction: column;
@@ -184,7 +184,16 @@ const FloatSubSubOut = keyframes`
 `
 
 const NameDiv = styled.div`
-    @media only screen and (max-width: 576px) {
+    @media only screen and (min-width: 10px) and (max-width: 370px) {
+        font-size: 2.5rem;
+        font-weight: 600;
+        line-height: 1.1em;
+        color: ${secondaryColor};
+        min-width: 100%;
+        max-width: 100%;
+        text-align: left;
+    }
+    @media only screen and (min-width: 371px) and (max-width: 576px) {
         font-size: 12.5vw;
         font-weight: 600;
         line-height: 1.1em;
@@ -237,7 +246,17 @@ const NameDiv = styled.div`
 `
 
 const SubDiv = styled.div`
-    @media only screen and (max-width: 576px) {
+    @media only screen and (min-width: 10px) and (max-width: 370px) {
+        font-size: 1.75rem;
+        color: ${secondaryColor};
+        min-width: 100%;
+        max-width: 100%;
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        line-height: 1.15em;
+    }
+    @media only screen and (min-width: 371px) and (max-width: 576px) {
         font-size: 7.5vw;
         color: ${secondaryColor};
         min-width: 100%;
@@ -289,7 +308,17 @@ const SubDiv = styled.div`
 `
 
 const SubSubDiv = styled.div`
-    @media only screen and (max-width: 576px) {
+    @media only screen and (min-width: 10px) and (max-width: 370px) {
+        font-size: .75rem;
+        color: ${secondaryColor};
+        min-width: 100%;
+        max-width: 100%;
+        text-align: left;
+        margin-top: 20px;
+        min-width: 78vw;
+        max-width: 78vw;
+    }
+    @media only screen and (min-width: 371px) and (max-width: 576px) {
         font-size: 3.75vw;
         color: ${secondaryColor};
         min-width: 100%;

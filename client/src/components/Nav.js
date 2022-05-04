@@ -95,6 +95,7 @@ const NavMain = styled.div`
         align-items: center;
         justify-content: center;
         z-index: 999;
+        visibility: visible
     }
 `
 
@@ -926,6 +927,14 @@ function Nav(props) {
         }
 
         $('#burger-mobile').on('click', showMobileMenu);
+
+        $(window).on('resize', () => {
+            if ($(window).width() > 991) {
+                $('#nav-main').css('visibility', 'visible');
+            } else {
+                $('#nav-main').css('visibility', 'hidden');
+            }
+        })
 
     })
 
