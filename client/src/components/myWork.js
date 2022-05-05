@@ -821,7 +821,7 @@ export default (props) => {
     document.getElementById('main-preview-mobile').addEventListener('touchend', (event) => {
       touchendX = event.changedTouches[0].screenX;
       touchendY = event.changedTouches[0].screenY;
-      handleGesture();
+      handleGesture;
     }, false); 
     
     const handleGesture = () => {

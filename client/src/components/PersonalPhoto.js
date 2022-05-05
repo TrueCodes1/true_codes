@@ -121,7 +121,7 @@ export default () => {
 
     return(
             <PersonalPhotoDiv className="personal-photo-div" id="personal-photo-div">
-                <PersonalPhotoImg src={PersonalPhoto} className="personal-photo"/>
+                <PersonalPhotoImg src={PersonalPhoto} className="personal-photo" preload/>
             </PersonalPhotoDiv>
     )
 }
