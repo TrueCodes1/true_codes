@@ -7,7 +7,7 @@ import './styles/animations.css';
 import './styles/all.css';
 import SocialsHome from "./SocialsHome";
 
-import PersonalPhoto from './images/personal_photo_3.png';
+import PersonalPhoto from './images/personal_photo_3-min.png';
 
 const primaryColor = '#131b23';
 const secondaryColor = '#e9f1f7';
