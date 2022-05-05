@@ -819,9 +819,10 @@ export default (props) => {
     }, false);
     
     document.getElementById('main-preview-mobile').addEventListener('touchend', (event) => {
+      event.preventDefault();
       touchendX = event.changedTouches[0].screenX;
       touchendY = event.changedTouches[0].screenY;
-      handleGesture;
+      handleGesture();
     }, false); 
     
     const handleGesture = () => {
