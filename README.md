@@ -44,11 +44,11 @@ Visiting the page on the current bookmark for the first time, *special animation
 
 When on the landing page already, you can see there are only few options to choose, that's because I love to make things easy-to-understand and clean. So we got 3 parts offered, let's introduce 'em:
 
-** - who I am: **
+**- who I am:**
 
-** - my work: **
+**- my work:**
 
-** - hit me up: **
+**- hit me up:**
 
 ___
 
