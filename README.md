@@ -46,15 +46,21 @@ When on the landing page already, you can see there are only few options to choo
 
 **- who I am:**
 
+This part provides some key information 'bout me.
+
 **- my work:**
 
+Come and see what I have produced so far! 😍 Hovering over any of the choices makes the main part find the requested information for you and you can read all the important stuff about the project in seconds. Plus, there is a link to hop over to the web, where the project actually runs. Yes, (almost) all of my projects are there online! No need to run it yourself.
+
 **- hit me up:**
+
+Fill in the form and let's get in touch! I'm waiting for your message there in my e-mail! ❤️  
 
 ___
 
 ## 🚀 What drove me? 
 
-
+Bruh, I was so enthusiastic 'bout creating my own portfolio to let anyone get a taste of my work while getting to know me closer! But there were other reasons as well, of course, and **wanting to learn React was one of them**. Yes, this was my first React project, where I learnt all the key stuff concerning this super useful React framework . styled components, hooks or virtual DOM! 
 
 ___
 
