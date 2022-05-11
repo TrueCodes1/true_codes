@@ -38,7 +38,7 @@ ____
 
 ## 🎛️ How to use TrueCodes? 
 
-Well, let's start by jumping to (the web 😆)[https://www.truecodes.dev]
+Well, let's start by jumping to [the web 😆](https://www.truecodes.dev)
 
 Visiting the page on the current bookmark for the first time, *special animation* is here to welcome you! ❤️ But not everyone likes animation. Feel free to skip it by refreshing the web anytime. 
 
@@ -67,9 +67,5 @@ ___
 🔥 Watch me on other repos as well:
 
 - [Sigred](https://github.com/TrueCodes1/sigred_public.git) or [web](https://www.sigred.org)
-<<<<<<< HEAD
-- [Moje Recepty](https://github.com/TrueCodes1/moje_recepty.git) or web (soon 🕚)
-- [Meine Verben](https://github.com/TrueCodes1/meine_verbs.git) or [web](http://www.meineverben.com)
-=======
 - [Meine Verben](https://github.com/TrueCodes1/meine_verbs.git) or [web](http://www.meineverben.com)
 - [Moje Recepty](https://github.com/TrueCodes1/moje_recepty.git) or web (soon 🕚)
