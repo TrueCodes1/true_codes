@@ -60,7 +60,7 @@ ___
 
 ## 🚀 What drove me? 
 
-Bruh, I was so enthusiastic 'bout creating my own portfolio to let anyone get a taste of my work while getting to know me closer! But there were other reasons as well, of course, and **wanting to learn React was one of them**. Yes, this was my first React project, where I learnt all the key stuff concerning this super useful React framework . styled components, hooks or virtual DOM! 
+Bruh, I was so enthusiastic 'bout creating my own portfolio to let anyone get a taste of my work while getting to know me closer! But there were other reasons as well, of course, and **wanting to learn React was one of them**. Yes, this was my first React project, where I learnt all the key stuff concerning this super useful React framework - styled components, hooks or virtual DOM! 
 
 ___
 
@@ -73,4 +73,3 @@ ___
 =======
 - [Meine Verben](https://github.com/TrueCodes1/meine_verbs.git) or [web](http://www.meineverben.com)
 - [Moje Recepty](https://github.com/TrueCodes1/moje_recepty.git) or web (soon 🕚)
->>>>>>> 0b5d475b95fbda87734a1366a28e694bc6584f4b
