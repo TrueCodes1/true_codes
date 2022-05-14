@@ -14,12 +14,21 @@ ____
 
 ### 📱 Front-end
 
+&nbsp;&nbsp;&nbsp;&nbsp; React
+
+&nbsp;&nbsp;&nbsp;&nbsp; JavaScript
+
 
 ### 🎨 Design
+
+&nbsp;&nbsp;&nbsp;&nbsp; Figma
 
 
 ### 🔧 Back-end
 
+&nbsp;&nbsp;&nbsp;&nbsp; Node.js (EXPRESS)
+
+&nbsp;&nbsp;&nbsp;&nbsp; Heroku
 
 ____
 
