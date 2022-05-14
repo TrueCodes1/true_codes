@@ -26,7 +26,9 @@ ____
 
 ### 🔧 Back-end
 
-&nbsp;&nbsp;&nbsp;&nbsp; Node.js (EXPRESS)
+&nbsp;&nbsp;&nbsp;&nbsp; Node.js 
+
+&nbsp;&nbsp;&nbsp;&nbsp; Express.js
 
 &nbsp;&nbsp;&nbsp;&nbsp; Heroku
 
