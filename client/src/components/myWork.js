@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import $ from 'jquery';
-
+ 
 import './styles/all.css';
 import './styles/animations.css';
 import './styles/fonts.css';
