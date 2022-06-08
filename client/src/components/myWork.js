@@ -1,13 +1,9 @@
+//IMPORTING MODULES
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components'; 
 import $ from 'jquery';
- 
-import './styles/all.css';
-import './styles/animations.css';
-import './styles/fonts.css';
-import projects from './jsons/projects';
-import GalleryOfDesign from './galleryOfDesign';
 
+// IMPORTING STYLED COMPONENTS
 import MainDiv from './styledComponents/myWork/MainDiv';
 import WorkChoice from './styledComponents/myWork/WorkChoice';
 import Choice from './styledComponents/myWork/Choice';
@@ -29,8 +25,15 @@ import LinkStyled from './styledComponents/myWork/LinkStyled';
 import ScrollableDescription from './styledComponents/myWork/ScrollableDescription';
 import ScrollableDescriptionContent from './styledComponents/myWork/ScrollableDescriptionContent';
 
-const primaryColor = '#131b23';
-const secondaryColor = '#e9f1f7';
+//IMPORTING OTHER NECCESSARY FILES
+import './styles/all.css';
+import './styles/animations.css';
+import './styles/fonts.css';
+import projects from './jsons/projects';
+import colors from './jsons/colors';
+
+const primaryColor = colors.primaryColor;
+const secondaryColor = colors.secondaryColor;
 
 export default (props) => {
 
