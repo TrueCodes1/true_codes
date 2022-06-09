@@ -1,15 +1,19 @@
+//IMPORTING MODULES
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import $ from 'jquery';
 
+//IMPORTING COMPONENTS
+import Logo from './images/opening_logo.svg';
+
+//IMPORTING ALL OTHER NECCESSARY FILES
 import './styles/all.css';
 import './styles/animations.css';
 import './styles/fonts.css';
+import colors from './jsons/colors';
 
-import Logo from './images/opening_logo.svg';
-
-const primaryColor = '#131b23';
-const secondaryColor = '#e9f1f7';
+const primaryColor = colors.primaryColor;
+const secondaryColor = colors.secondaryColor;
 
 const Rotating = keyframes`
     0%, 100% {
@@ -986,10 +990,13 @@ export default () => {
     })
 
   return (
+
       <>
 
         <OpeningTag id='opening-tag'>
+
             <TypingSpanOuter id='typing-span-outer'>
+
                 &#60;&#160;
                 <TypingSpanInner id='typing-span-inner'></TypingSpanInner>
                 &#160;&#47;&#62;
@@ -1008,113 +1015,172 @@ export default () => {
                 <Img3 />
                 <Img3 />
                 <Img3 />
+
             </TypingSpanOuter>
+
         </OpeningTag>
 
         <BottomQuestionWhole id='bottom-q-whole'>
+
             <FrontOrBack id='bottom-up'>
+
                 <PushingDiv />
                 <InnerDiv>
+
                     <FrontBack id='front-end'>
+
                         front-end
+
                     </FrontBack>
                     <Or>
+
                         or
+
                     </Or>
                     <FrontBack id='back-end'>
+
                         back-end
+
                     </FrontBack>
+
                 </InnerDiv>
+
             </FrontOrBack>
             <FrontOrBack id='bottom-bottom'>
+
                 <FrontBack id='full-stack'>
+
                     full-stack
+
                 </FrontBack>
                 <PushingDiv />
+
             </FrontOrBack>
+
         </BottomQuestionWhole>
 
         <IWhole id='i-part'>
+
             <IPart id='i-part-1'>
+
                 <I className='scrollable-i' id='scrollable-i-1'>
+
                     <ISingle>
                         
                     </ISingle>
                     <ISingle>
+
                         I
+
                     </ISingle>
                     <ISingle>
                         
                     </ISingle>
+
                 </I>
                 <WhatIDo id='typable-what-i-do-1'>
+
                     write code 4 hours daily.
+
                 </WhatIDo>
+
             </IPart>
             <IPart id='i-part-2'>
+
                 <I className='scrollable-i' id='scrollable-i-2'>
+
                     <ISingle>
                         
                     </ISingle>
                     <ISingle>
+
                         I
+
                     </ISingle>
                     <ISingle>
                        
                     </ISingle>
+
                 </I>
                 <WhatIDo id='typable-what-i-do-2'>
+
                     have my goals set high.
+
                 </WhatIDo>
+
             </IPart>
             <IPart id='i-part-3'>
+
                 <I className='scrollable-i' id='scrollable-i-3'>
+
                     <ISingle>
                         
                     </ISingle>
                     <ISingle>
+
                         I
+
                     </ISingle>
                     <ISingle>
                         
                     </ISingle>
+
                 </I>
                 <WhatIDo id='typable-what-i-do-3'>
+
                     love JavaScript! 
+
                 </WhatIDo>
+
             </IPart>
             <IPart id='i-part-4'>
+
                 <I className='scrollable-i' id='scrollable-i-4'>
+
                     <ISingle>
                         
                     </ISingle>
                     <ISingle>
+
                         I
+
                     </ISingle>
                     <ISingle>
                         
                     </ISingle>
+
                 </I>
                 <WhatIDo id='typable-what-i-do-4'>
+
                     've created two e-shops.
+
                 </WhatIDo>
             </IPart>
             <IPart id='i-part-5'>
+
                 <I className='scrollable-i' id='scrollable-i-5'>
+
                     <ISingle>
                         
                     </ISingle>
                     <ISingle>
+
                         I
+
                     </ISingle>
                     <ISingle>
                         
                     </ISingle>
+
                 </I>
                 <WhatIDo id='typable-what-i-do-5'>
+
                     am excited you are here!
+
                 </WhatIDo>
+
             </IPart>
+
         </IWhole>
 
       </>

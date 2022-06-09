@@ -15,7 +15,6 @@ import SubSubDiv from './styledComponents/Home/SubSubDiv'
 //IMPORTING OTHER COMPONENTS
 import SocialsHome from "./SocialsHome";
 import PersonalPhoto from "./PersonalPhoto";
-import ISpeakWhole from "./ISpeakWhole";
 import OpeningTag from "./OpeningTag";
 
 //IMPORTING OTHER NECCESSARY FILES

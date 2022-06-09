@@ -1,124 +1,22 @@
+//IMPORTING MODULES
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import $ from 'jquery';
 
+//IMPORTING STYLED COMPONENTS
+import MainSwitch from './styledComponents/LightDarkToggle/MainSwitch';
+import ToggleBall from './styledComponents/LightDarkToggle/ToggleBall';
+
+//IMPORTING ALL OTHER NECCESSARY FILES
 import './styles/all.css';
 import './styles/animations.css';
+import colors from './jsons/colors';
 
-const light = '#e9f1f7';
-const dark = '#131b23';
+const primaryColor = colors.primaryColor;
+const secondaryColor = colors.secondaryColor;
 
-var primaryColor = dark;
-var secondaryColor = light;
-
-const MainSwitch = styled.div`
-    @media only screen and (min-width: 10px) and (max-width: 370px) {
-        display: none;
-    }
-    @media only screen and (min-width: 371px) and (max-width: 576px) {
-        position: absolute;
-        min-width: 80px;
-        max-width: 80px;
-        min-height: 48px;
-        max-height: 48px;
-        top: 10px;
-        right: 10px;
-        border: 1px solid ${secondaryColor};
-        border-radius: 23px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 0 3.5px;
-        transition: .25s ease;
-        z-index: 999;
-        opacity: 0;
-
-        &.dark {
-            background: ${primaryColor}
-        }
-
-        &.light {
-            background: ${secondaryColor}
-        }
-    }
-    @media only screen and (min-width: 576px) and (max-width: 991px) {
-        position: absolute;
-        min-width: 80px;
-        max-width: 80px;
-        min-height: 48px;
-        max-height: 48px;
-        top: 40px;
-        right: 20px;
-        border: 1px solid ${secondaryColor};
-        border-radius: 23px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 0 3.5px;
-        transition: .25s ease;
-        z-index: 999;
-        opacity: 0;
-
-        &.dark {
-            background: ${primaryColor}
-        }
-
-        &.light {
-            background: ${secondaryColor}
-        }
-    }
-    @media only screen and (min-width: 992px) {
-        position: absolute;
-        min-width: 80px;
-        max-width: 80px;
-        min-height: 48px;
-        max-height: 48px;
-        top: 10px;
-        right: 10px;
-        border: 1px solid ${secondaryColor};
-        border-radius: 23px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 0 3.5px;
-        transition: .25s ease;
-        z-index: 999;
-        opacity: 0;
-
-        &.dark {
-            background: ${primaryColor}
-        }
-
-        &.light {
-            background: ${secondaryColor}
-        }
-    }
-`
-
-const ToggleBall = styled.div`
-    min-width: 40px;
-    max-width: 40px;
-    min-height: 40px;
-    max-height: 40px;/*
-    border: 2px solid ${primaryColor};
-    background: ${primaryColor};*/
-    border-radius: 20px;
-    cursor: pointer;
-    
-    &.dark {
-        background: ${secondaryColor}
-    }
-
-    &.light {
-        background: ${primaryColor}
-    }
-`
 
 export default function LightDarkToggle(props) {
-
 
     useEffect(() => {
 
@@ -164,10 +62,17 @@ export default function LightDarkToggle(props) {
             };*/
 
   return (
+
       <>
+
         <MainSwitch id='main-switch' className={props.theme}>
+
             <ToggleBall id='switch-ball' className={props.theme}></ToggleBall>
+
         </MainSwitch>
+
       </>
+
   );
+  
 }
