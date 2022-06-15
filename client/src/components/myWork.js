@@ -222,6 +222,7 @@ export default (props) => {
         $('#project-stack-mobile').html(project.stack);
         $('#project-name-mobile').html(project.name);
         if (project.link.toString().replaceAll(' ', '').length > 0) {
+          $('#project-link-mobile').attr('href', project.link);
           $('#project-link-mobile').html(project.name);
           $('#project-link-mobile').css('text-decoration', 'underline');
           $('#project-link-mobile').css('opacity', '1');
@@ -229,8 +230,8 @@ export default (props) => {
           $('#project-link-mobile').html('link to web coming soon');
           $('#project-link-mobile').css('text-decoration', 'none');
           $('#project-link-mobile').css('opacity', '.5');
+          $('#project-link-mobile').removeAttr('href');
         }
-        $('#project-link-mobile').attr('href', project.link);
         $('#project-text-mobile').html(project.text);
         $('#main-preview-mobile').removeClass('leave');
         $('#main-preview-mobile').addClass('enter');
